@@ -35,6 +35,35 @@ Requires macOS 13 or later.
 * Multi-monitor support: Enjoy seamless operation across multiple monitors
 * Global accessibility: PixelsMeasure supports multiple languages, making it accessible to users around the world
 
+## Keyboard shortcuts
+
+You can use the following keyboard shortcuts in the app:
+
+* Start Measure: `Ctrl + Command + Shift + P`
+* Stop Measure: `Escape`
+* Cross Mode: Hold `Ctrl`
+* Hold Horizontal: `H`
+* Hold Vertical: `V`
+* Hold Both: `B`
+* Tolerance Toggle: `T`
+* Tolerance Increase: `=`
+* Tolerance Decrease: `-`
+* Undo: `Command + Z`
+* Redo: `Command + Shift + Z`
+* Quit: `Command + Q`
+
+You can customize your shortcuts under `Settings... -> Shortcuts` screen.
+
+## Tips
+
+- Open `Help -> Onboarding Guide` menu to explore major features and get started quickly.
+- Adjust tolerance to work with shadows and low-contrast elements.
+- Press `Command + Q` to quit the App at any time.
+
+## Screenshots
+
+
+
 ## Contributing Bug Reports
 
 GitHub is used for bug tracking. Please search [existing issues](https://github.com/zddhub/PixelsMeasure/issues) and create a new one if the issue is not yet tracked.
