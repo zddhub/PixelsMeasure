@@ -13,8 +13,6 @@
 
 [PixelsMeasure](https://apps.apple.com/app/pixelsmeasure/id1638740542) works on the whole screen, across all apps, and you can measure anything.
 
-![PixelsMeasure](assets/images/PixelsMeasure.gif)
-
 Upgrade your measurement experience with PixelsMeasure now!
 
 ## Download
@@ -22,6 +20,8 @@ Upgrade your measurement experience with PixelsMeasure now!
 [![Download on the App Store](assets/images/download-on-app-store-badge.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
 
 Requires macOS 13 or later.
+
+![PixelsMeasure](assets/images/PixelsMeasure.gif)
 
 ## Features
 
