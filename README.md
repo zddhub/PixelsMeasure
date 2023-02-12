@@ -76,6 +76,7 @@ See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/as
 
 - [Apple Store][Apple_Store]
 - [YouTube](https://youtu.be/Y7_aRwq7gz4)
+- [bilibili](https://www.bilibili.com/video/BV1WM411P71r)
 
 ## Contributing Bug Reports
 
