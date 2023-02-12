@@ -11,13 +11,13 @@
 	<br>
 </div>
 
-[PixelsMeasure](https://apps.apple.com/app/pixelsmeasure/id1638740542) works on the whole screen, across all apps, and you can measure anything.
+[PixelsMeasure][Apple_Store] works on the whole screen, across all apps, and you can measure anything.
 
 Upgrade your measurement experience with PixelsMeasure now!
 
 ## Download
 
-[![Download on the App Store](assets/images/download-on-app-store-badge.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
+[![Download on the App Store](assets/images/download-on-app-store-badge.svg)][Apple_Store]
 
 Requires macOS 13 or later.
 
@@ -72,12 +72,21 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
 See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/assets/images/screenshots).
 
+## Resources
+
+- [Apple Store][Apple_Store]
+- [YouTube](https://youtu.be/Y7_aRwq7gz4)
+
 ## Contributing Bug Reports
 
 GitHub is used for bug tracking. Please search [existing issues](https://github.com/zddhub/PixelsMeasure/issues) and create a new one if the issue is not yet tracked.
 
 ## Download
 
-[![Download on the App Store](assets/images/download-on-app-store-badge.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
+[![Download on the App Store](assets/images/download-on-app-store-badge.svg)][Apple_Store]
 
 Requires macOS 13 or later.
+
+
+
+[Apple_Store]: https://apps.apple.com/app/pixelsmeasure/id1638740542
