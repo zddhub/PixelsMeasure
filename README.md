@@ -13,7 +13,7 @@
 
 [PixelsMeasure](https://apps.apple.com/app/pixelsmeasure/id1638740542) works on the whole screen, across all apps, and you can measure anything.
 
-![measure-distances](assets/images/measure-distances.gif)
+![PixelsMeasure](assets/images/PixelsMeasure.gif)
 
 Upgrade your measurement experience with PixelsMeasure now!
 
