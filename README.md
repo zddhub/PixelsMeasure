@@ -82,7 +82,7 @@ See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/as
 
 PixelsMeasure collects no information from users. The app runs entirely in a sandbox and does not have access to any data outside of the sandbox. The app also does not use any backend services, third-party analytics or tracking services.
 
-See detail [Privacy Policy for PixelsMeasure](Privacy.md).
+See detailed [Privacy Policy](Privacy.md) for PixelsMeasure](Privacy.md).
 
 ## Contributing Bug Reports
 
