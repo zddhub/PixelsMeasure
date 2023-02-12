@@ -62,23 +62,15 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
 ## Screenshots
 
-### Measure distances
-
 ![measure-distances](assets/images/screenshots/measure-distances.png)
-
-### Measure objects
 
 ![measure-objects](assets/images/screenshots/measure-objects.png)
 
-### Cross mode
-
 ![cross-mode](assets/images/screenshots/cross-mode.png)
-
-### Tolerance mode
 
 ![tolerance-mode](assets/images/screenshots/tolerance.png)
 
-See more screenshots [here](asserts/images/screenshots).
+See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/assets/images/screenshots).
 
 ## Contributing Bug Reports
 
