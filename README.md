@@ -78,6 +78,12 @@ See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/as
 - [YouTube](https://youtu.be/Y7_aRwq7gz4)
 - [bilibili](https://www.bilibili.com/video/BV1WM411P71r)
 
+## Privacy Policy
+
+PixelsMeasure collects no information from users. The app runs entirely in a sandbox and does not have access to any data outside of the sandbox. The app also does not use any backend services, third-party analytics or tracking services.
+
+See detail [Privacy Policy for PixelsMeasure](Privacy.md).
+
 ## Contributing Bug Reports
 
 GitHub is used for bug tracking. Please search [existing issues](https://github.com/zddhub/PixelsMeasure/issues) and create a new one if the issue is not yet tracked.
