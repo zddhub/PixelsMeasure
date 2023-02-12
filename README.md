@@ -13,11 +13,13 @@
 
 [PixelsMeasure](https://apps.apple.com/app/pixelsmeasure/id1638740542) works on the whole screen, across all apps, and you can measure anything.
 
+![measure-distances](assets/images/measure-distances.gif)
+
 Upgrade your measurement experience with PixelsMeasure now!
 
 ## Download
 
-[![Download on the App Store](https://metabolist.org/assets/images/download_on_the_app_store.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
+[![Download on the App Store](assets/images/download_on_the_app_store.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
 
 Requires macOS 13 or later.
 
@@ -39,4 +41,6 @@ GitHub is used for bug tracking. Please search [existing issues](https://github.
 
 ## Download
 
-[![Download on the App Store](https://metabolist.org/assets/images/download_on_the_app_store.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
+[![Download on the App Store](assets/images/download_on_the_app_store.svg)](https://apps.apple.com/us/app/pixelsmeasure/id1638740542)
+
+Requires macOS 13 or later.
