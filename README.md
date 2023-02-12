@@ -30,8 +30,8 @@ Requires macOS 13 or later.
 * Cross mode: Ensure perfect alignment of all elements on your screen, which also displays your pointer position
 * Tolerance mode: Adjust tolerance for improved accuracy, even with shadows and low-contrast elements
 * Hold dimensions: Hold dimensions on the screen for reference
-* User-friendly editing: Effortlessly undo and redo your measurements with our add edit tool
-* Convenient screenshot capture: Easily take screenshots and share them with your team with system screenshot tool
+* User-friendly editing: Effortlessly undo and redo your measurements with our edit tool
+* Convenient screenshot capture: Easily take screenshots and share them with your team with the system screenshot tool
 * Multi-monitor support: Enjoy seamless operation across multiple monitors
 * Global accessibility: PixelsMeasure supports multiple languages, making it accessible to users around the world
 
@@ -62,7 +62,23 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
 ## Screenshots
 
+### Measure distances
 
+![measure-distances](assets/images/screenshots/measure-distances.png)
+
+### Measure objects
+
+![measure-objects](assets/images/screenshots/measure-objects.png)
+
+### Cross mode
+
+![cross-mode](assets/images/screenshots/cross-mode.png)
+
+### Tolerance mode
+
+![tolerance-mode](assets/images/screenshots/tolerance.png)
+
+See more screenshots [here](asserts/images/screenshots).
 
 ## Contributing Bug Reports
 
