@@ -18,8 +18,7 @@
                             <a href="https://github.com/zddhub" class="nav-link" target="_blank" rel="noopener">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/privacy"
-                               class="nav-link" target="_blank" rel="noopener">Privacy</a>
+                            <a href="/#/privacy" class="nav-link" rel="noopener">Privacy</a>
                         </li>
                     </ul>
                 </div>

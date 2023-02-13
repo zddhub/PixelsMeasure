@@ -3,6 +3,7 @@ import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 import Homepage from "./views/Homepage.vue";
+import Privacy from "./views/Privacy.vue";
 import Landing from "./views/Landing.vue";
 import Login from "./views/Login.vue";
 import Register from "./views/Register.vue";
@@ -19,6 +20,15 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Homepage,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/privacy",
+      name: "privacy",
+      components: {
+        header: AppHeader,
+        default: Privacy,
         footer: AppFooter
       }
     },

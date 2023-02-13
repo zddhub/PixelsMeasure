@@ -19,8 +19,7 @@
 
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="/privacy"
-                       target="_blank" rel="noopener" data-toggle="tooltip" title="Email">
+                    <a class="nav-link nav-link-icon" href="/#/privacy" rel="noopener" data-toggle="tooltip" title="Email">
                         <span class="nav-link-inner--text">Privacy</span>
                     </a>
                 </li>
