@@ -1,61 +1,48 @@
 <template>
     <section class="section-hero section-shaped my-0">
-        <div class="shape shape-style-1 shape-primary">
-            <span class="span-150"></span>
-            <span class="span-50"></span>
-            <span class="span-50"></span>
-            <span class="span-75"></span>
-            <span class="span-100"></span>
-            <span class="span-75"></span>
-            <span class="span-50"></span>
-            <span class="span-100"></span>
-            <span class="span-50"></span>
-            <span class="span-100"></span>
-        </div>
         <div class="container shape-container d-flex align-items-center">
             <div class="col px-0">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-7 text-center pt-lg">
-                        <img src="img/brand/white.png" style="width: 200px;" class="img-fluid">
-                        <p class="lead text-white mt-4 mb-5">A beautiful Design System for Bootstrap 4. It's Free and Open Source.</p>
+                        <br />
+                        <img src="img/brand/logo_128.png" style="width: 128px;" class="img-fluid">
+                        <h1>PixelsMeasure</h1>
+                        <h5>The fastest tool for measuring anything on your screen</h5>
+                        <br />
+
                         <div class="btn-wrapper">
-                            <base-button tag="a"
-                                         href="https://demos.creative-tim.com/vue-argon-design-system/documentation"
-                                         class="mb-3 mb-sm-0"
-                                         type="info"
-                                         icon="fa fa-code">
-                                Components
+                            <base-button tag="a" type="primary" href="https://apps.apple.com/app/pixelsmeasure/id1638740542" class="btn btn-1 btn-primary">
+                                <i class="fa fa-cloud-download mr-2"></i>
+                                Download
                             </base-button>
-                            <base-button tag="a"
-                                         href="https://www.creative-tim.com/product/vue-argon-design-system"
-                                         class="mb-3 mb-sm-0"
-                                         type="white"
-                                         icon="ni ni-cloud-download-95">
-                                Download Vue
+                            <base-button tag="a" href="https://youtu.be/Y7_aRwq7gz4" class="btn btn-1 btn-outline-primary">
+                                <i class="fa fa-play-circle-o mr-2"></i>
+                                Watch this video
                             </base-button>
                         </div>
-                    </div>
-                </div>
-                <div class="row align-items-center justify-content-around stars-and-coded">
-                    <div class="col-sm-4">
-                        <span class="text-white alpha-7 ml-3">Star us on</span>
-                        <a href="https://github.com/creativetimofficial/argon-design-system" target="_blank" title="Support us on Github">
-                            <img src="img/brand/github-white-slim.png" style="height: 22px; margin-top: -3px">
-                        </a>
-                    </div>
-                    <div class="col-sm-4 mt-4 mt-sm-0 text-right">
-                        <span class="text-white alpha-7">Coded by</span>
-                        <a href="https://www.creative-tim.com" target="_blank" title="Creative Tim - Premium Bootstrap Themes and Templates">
-                            <img src="img/brand/creativetim-white-slim.png" class="ml-3" style="height: 30px;">
-                        </a>
+                        <br /><br />
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container container-lg">
+            <div class="row">
+                <div class="col-md-0">
+                    <div class="card card-lift--hover shadow border-0">
+                        <img class="card-img" data-src="img/PixelsMeasure.gif" src="img/PixelsMeasure.gif" lazy="loaded"
+            width="80%" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
     </section>
 </template>
 <script>
 export default {};
 </script>
 <style>
+
 </style>

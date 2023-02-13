@@ -11,16 +11,26 @@
 
         .nav-link-inner--text {
             margin-left: .25rem;
+            color: $black;
         }
     }
 }
 
+.navbar-main {
+    box-shadow: 0 14px 20px -8px rgb(14 12 27 / 5%);
+}
+
 .navbar-brand {
     font-size: $font-size-sm;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: .875rem;
+    font-weight: 500;
+    font-size: 1.5rem;
     letter-spacing: .05px;
+
+    .nav-link-inner--menu {
+        margin-left: .5rem;
+        color: $black;
+        vertical-align: middle;
+    }
 
     img {
         height: 30px;
@@ -29,7 +39,7 @@
 
 .navbar-dark {
     .navbar-brand {
-        color: $white;
+        color: $black;
     }
 }
 
@@ -165,18 +175,18 @@
     z-index: 100;
     background-color: transparent;
     border: 0;
-    box-shadow: none;
+    box-shadow: 0 14px 20px -8px rgb(14 12 27 / 5%);
 
     .navbar-brand {
-        color: rgba(255, 255, 255, 1);
+        color: $black;
     }
 
     .navbar-toggler {
-        color: rgba(255, 255, 255, 1);
+        color: $black;
     }
 
     .navbar-toggler-icon {
-        background-image: $navbar-dark-toggler-icon-bg;
+        background-image: $navbar-light-toggler-icon-bg;
     }
 }
 
@@ -184,14 +194,14 @@
     .navbar-transparent {
         .navbar-nav {
             .nav-link {
-                color: $navbar-dark-color;
+                color: $navbar-light-color;
 
                 @include hover-focus {
-                    color: $navbar-dark-hover-color;
+                    color: $navbar-light-hover-color;
                 }
 
                 &.disabled {
-                    color: $navbar-dark-disabled-color;
+                    color: $navbar-light-disabled-color;
                 }
             }
 

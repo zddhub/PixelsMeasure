@@ -5,7 +5,8 @@
             :aria-controls="target"
             :aria-expanded="toggled"
             aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+        <i class="fa fa-bars" aria-hidden="true"></i>
     </button>
 </template>
 <script>
