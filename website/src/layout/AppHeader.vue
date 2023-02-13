@@ -8,9 +8,9 @@
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <a href="#">
+                    <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
                         <span class="nav-link-inner--menu">PixelsMeasure</span>
-                    </a>
+                    </router-link>
                 </div>
                 <div class="col-6 collapse-close">
                     <close-button @click="closeMenu"></close-button>
@@ -19,9 +19,9 @@
 
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="/#/privacy" rel="noopener" data-toggle="tooltip" title="Email">
-                        <span class="nav-link-inner--text">Privacy</span>
-                    </a>
+                    <!-- <a class="nav-link nav-link-icon" href="/privacy" rel="noopener" data-toggle="tooltip" title="Email">
+                    </a> -->
+                    <router-link to="/privacy" class="nav-link nav-link-icon"><span class="nav-link-inner--text">Privacy</span></router-link>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-link-icon" href="mailto:zddhub@gmail.com"
