@@ -1,9 +1,9 @@
 <template>
-    <section class=" my-0">
+    <section class="my-0">
         <div class="container shape-container d-flex align-items-left">
             <div class="col px-0">
                 <div class="row justify-content-center align-items-left">
-                    <div class="col-lg-7 text-left pt-lg">
+                    <div class="col-lg-12 text-left pt-lg">
                         <br/>
         <vue-markdown>
 # PixelsMeasure Privacy Policy

@@ -48,6 +48,7 @@
 .footer.has-cards {
     overflow: hidden;
     padding-top: 500px;
+    margin: 0 1rem;
     margin-top: -420px;
     position: relative;
     background: transparent;
@@ -67,7 +68,7 @@
     .container {
         pointer-events: auto;
         position: relative;
-    }
+    } 
 }
 
 .nav-footer {
