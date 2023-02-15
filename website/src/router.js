@@ -12,7 +12,6 @@ import Profile from "./views/Profile.vue";
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   linkExactActiveClass: "active",
   routes: [
     {
@@ -27,15 +26,6 @@ export default new Router({
     {
       path: "/privacy",
       name: "privacy",
-      components: {
-        header: AppHeader,
-        default: Privacy,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/Privacy.html",
-      name: "Privacy.html",
       components: {
         header: AppHeader,
         default: Privacy,
