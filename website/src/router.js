@@ -67,7 +67,16 @@ export default new Router({
         default: Profile,
         footer: AppFooter
       }
-    }
+    },
+    {
+      path: "*",
+      name: "homepage",
+      components: {
+        header: AppHeader,
+        default: Homepage,
+        footer: AppFooter
+      }
+    },
   ],
   scrollBehavior: to => {
     if (to.hash) {
