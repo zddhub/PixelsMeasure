@@ -5,7 +5,7 @@
     </div>
 </template>
 <script>
-import Hero from "./components/Hero";
+import Hero from "./Hero.vue";
 import Landing from "./Landing.vue";
 
 

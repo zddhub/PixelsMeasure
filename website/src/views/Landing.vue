@@ -20,23 +20,11 @@
             </div>
         </section>
 
-        <!-- <section class="section">
-            <div class="container">
-                <div class="row justify-content-center text-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-3">Works everywhere. Across all apps.</h2>
-                        <p class="lead text-muted">PixelsMeasure works on the whole screen, across all apps, and you can
-                            measure anything.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
         <section>
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-2">
-                        <img src="img/theme/promo-1.png" class="img-fluid floating">
+                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-1">
                         <div class="pr-md-5">
@@ -68,7 +56,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-1">
-                        <img src="img/theme/promo-1.png" class="img-fluid floating">
+                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-2">
                         <div class="pr-md-5">
@@ -100,7 +88,7 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-2">
-                        <img src="img/theme/promo-1.png" class="img-fluid floating">
+                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-1">
                         <div class="pr-md-5">
