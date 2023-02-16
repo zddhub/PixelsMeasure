@@ -27,7 +27,7 @@
         </div>
 
         <div class="container container-lg">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-0">
                     <div class="card card-lift--hover shadow border-0">
                         <img class="card-img" data-src="img/PixelsMeasure.gif" src="img/PixelsMeasure.gif" lazy="loaded"

@@ -12,26 +12,24 @@
             <div class="container pt-lg pb-150">
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-10 pt-150">
-                        <h2 class="display-3 text-white">Works everywhere. Across all apps.</h2>
-                        <p class="lead text-white">PixelsMeasure works on the whole screen, across all apps, and you can
+                        <h2 class="display-3 text-white big-title">Works everywhere. Across all apps.</h2>
+                        <p class="lead text-white subtitle">PixelsMeasure works on the whole screen, across all apps, and you can
                             measure anything.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section class="section">
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-2">
-                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
+                        <img src="img/measure-distances.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-1">
                         <div class="pr-md-5">
-                            <icon name="ni ni-settings-gear-65" class="mb-5" size="lg" type="success" shadow rounded>
-                            </icon>
-                            <h3>Measure distance</h3>
-                            <p>Quickly determine the distance between any elements on your screen</p>
+                            <h3 class="title">Measure distance</h3>
+                            <p class="subtitle">Quickly determine the distance between any elements on your screen</p>
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
@@ -56,14 +54,12 @@
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-1">
-                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
+                        <img src="img/measure-objects.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-2">
                         <div class="pr-md-5">
-                            <icon name="ni ni-settings-gear-65" class="mb-5" size="lg" type="success" shadow rounded>
-                            </icon>
-                            <h3>Measure objects</h3>
-                            <p>Instantly identify the bounds of any object by simply dragging an area around it</p>
+                            <h3 class="title">Measure objects</h3>
+                            <p class="subtitle">Instantly identify the bounds of any object by simply dragging an area around it</p>
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
@@ -84,18 +80,64 @@
             </div>
         </section>
 
-        <section class="section section-lg">
+        <section class="section">
             <div class="container">
                 <div class="row row-grid align-items-center">
                     <div class="col-md-6 order-md-2">
-                        <img src="img/PixelsMeasure.gif" class="img-fluid floating">
+                        <img src="img/cross-mode.gif" class="img-fluid floating">
                     </div>
                     <div class="col-md-6 order-md-1">
                         <div class="pr-md-5">
-                            <icon name="ni ni-settings-gear-65" class="mb-5" size="lg" type="success" shadow rounded>
-                            </icon>
-                            <h3>Take a screenshot</h3>
-                            <p>Easily take screenshots and share them with your team with the system screenshot tool</p>
+                            <h3 class="title">Cross mode</h3>
+                            <p class="subtitle">Ensure perfect alignment of all elements on your screen, which also displays your pointer position</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="success" circle class="mr-3" icon="ni ni-html5"></badge>
+                                        <h6 class="mb-0">Instantly check alignment</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-6 order-md-1">
+                        <img src="img/undo-and-redo.gif" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-6 order-md-2">
+                        <div class="pr-md-5">
+                            <h3 class="title">User-friendly editing</h3>
+                            <p class="subtitle">Effortlessly undo and redo your measurements with our edit tool</p>
+                            <ul class="list-unstyled mt-5">
+                                <li class="py-2">
+                                    <div class="d-flex align-items-center">
+                                        <badge type="success" circle class="mr-3" icon="ni ni-settings-gear-65"></badge>
+                                        <h6 class="mb-0">Undo and redo your measurements</h6>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="row row-grid align-items-center">
+                    <div class="col-md-6 order-md-2">
+                        <img src="img/take-a-screenshot.gif" class="img-fluid floating">
+                    </div>
+                    <div class="col-md-6 order-md-1">
+                        <div class="pr-md-5">
+                            <h3 class="title">Take a screenshot</h3>
+                            <p class="subtitle">Easily take screenshots and share them with your team with the system screenshot tool</p>
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
@@ -111,7 +153,7 @@
         </section>
 
         <div class="position-relative">
-            <section class="section-shaped overflow-hidden">
+            <section class="section-shaped overflow-hidden margin-top-0">
                 <div class="shape shape-style-1 bg-gradient-warning">
                 </div>
 
@@ -165,8 +207,8 @@
                 <div class="container">
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-8">
-                            <h2 class="display-3  text-white">And much more, waiting for you to explore </h2>
-                            <p class="lead text-white">Get ready for a magical measurement experience.</p>
+                            <h2 class="display-3 text-white title">And much more, waiting for you to explore </h2>
+                            <p class="lead text-white subtitle">Get ready for a magical measurement experience.</p>
                         </div>
                     </div>
                 </div>
@@ -178,8 +220,8 @@
                             <div class="p-5">
                                 <div class="row align-items-center">
                                     <div class="col-lg-8">
-                                        <h3 class="text-white">Get PixelsMeasure</h3>
-                                        <p class="lead text-white mt-3"> Don't hesitate to upgrade your measurement experience now. 
+                                        <h3 class="text-white big-title">Get PixelsMeasure</h3>
+                                        <p class="lead text-white mt-0"> Don't hesitate to upgrade your measurement experience. 
                                         </p>
                                     </div>
                                 </div>
