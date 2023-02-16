@@ -16,7 +16,7 @@
                     <span></span>
                 </div>
 
-                <div class="container">
+                <div class="container my-0">
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="row row-grid">
