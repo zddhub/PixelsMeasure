@@ -44,3 +44,30 @@
 .margin-top-0 {
     margin-top: 0;
 }
+
+.pb-80 {
+    padding-bottom: 80px;
+}
+
+.pb-96 {
+    padding-bottom: 96px !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: $blue;
+    border-color: $blue;
+}
+
+.btn-outline-primary, .btn-outline-primary:hover {
+    color: $blue;
+    background-color: transparent;
+    background-image: none;
+    border-color: $blue;
+}

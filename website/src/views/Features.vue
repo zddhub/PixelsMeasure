@@ -9,7 +9,7 @@
                 <span></span>
             </div>
 
-            <div class="container pt-lg pb-150">
+            <div class="container pt-lg pb-96">
                 <div class="row text-center justify-content-center">
                     <div class="col-lg-10 pt-150">
                         <h2 class="display-3 text-white big-title">Works everywhere. Across all apps.</h2>
@@ -33,13 +33,13 @@
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-settings-gear-65"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-plus-square-o"></badge>
                                         <h6 class="mb-0">Hold dimensions on the screen</h6>
                                     </div>
                                 </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-html5"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-clone"></badge>
                                         <h6 class="mb-0">Copy to clipboard</h6>
                                     </div>
                                 </li>
@@ -63,13 +63,13 @@
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-settings-gear-65"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-magnet"></badge>
                                         <h6 class="mb-0">Magically snaps to the object</h6>
                                     </div>
                                 </li>
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-html5"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-th"></badge>
                                         <h6 class="mb-0">Measure multiple objects at once</h6>
                                     </div>
                                 </li>
@@ -93,7 +93,7 @@
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-html5"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-plus"></badge>
                                         <h6 class="mb-0">Instantly check alignment</h6>
                                     </div>
                                 </li>
@@ -117,7 +117,7 @@
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-settings-gear-65"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-undo"></badge>
                                         <h6 class="mb-0">Undo and redo your measurements</h6>
                                     </div>
                                 </li>
@@ -141,7 +141,7 @@
                             <ul class="list-unstyled mt-5">
                                 <li class="py-2">
                                     <div class="d-flex align-items-center">
-                                        <badge type="success" circle class="mr-3" icon="ni ni-html5"></badge>
+                                        <badge type="success" circle class="mr-3" icon="fa fa-camera"></badge>
                                         <h6 class="mb-0">Coordinate with system screenshot tool</h6>
                                     </div>
                                 </li>
