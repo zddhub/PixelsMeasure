@@ -1,6 +1,6 @@
 <template>
     <div>
-        <section class="section section-shaped overflow-hidden">
+        <section class="section section-shaped overflow-hidden my-0 pl-0">
             <div class="shape shape-style-1 shape-default">
                 <span></span>
                 <span></span>
