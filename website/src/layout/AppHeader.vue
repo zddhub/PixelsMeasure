@@ -36,13 +36,7 @@
                     </a>
                 </li>
                 <li class="nav-item d-none d-lg-block ml-lg-4">
-                    <a href="https://apps.apple.com/app/pixelsmeasure/id1638740542" target="_blank" rel="noopener"
-                       class="btn btn-1 btn-primary">
-                        <span class="btn-inner--icon">
-                        <i class="fa fa-cloud-download mr-2"></i>
-                        </span>
-                        <span class="nav-link-inner--text">Download</span>
-                    </a>
+                    <primary-button></primary-button>
                 </li>
             </ul>
         </base-nav>
@@ -51,11 +45,13 @@
 <script>
 import BaseNav from "@/components/BaseNav";
 import CloseButton from "@/components/CloseButton";
+import PrimaryButton from "@/components/PrimaryButton";
 
 export default {
   components: {
     BaseNav,
-    CloseButton
+    CloseButton,
+    PrimaryButton
   }
 };
 </script>

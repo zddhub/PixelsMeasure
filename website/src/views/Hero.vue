@@ -10,10 +10,7 @@
                         <br />
 
                         <div class="btn-wrapper">
-                            <base-button tag="a" type="primary" href="https://apps.apple.com/app/pixelsmeasure/id1638740542" class="btn btn-1 btn-primary">
-                                <i class="fa fa-cloud-download mr-2"></i>
-                                Download
-                            </base-button>
+                            <primary-button></primary-button>
                             <base-button tag="a" href="https://youtu.be/Y7_aRwq7gz4" class="btn btn-1 btn-outline-primary">
                                 <i class="fa fa-play-circle-o mr-2"></i>
                                 Watch this video
@@ -40,7 +37,12 @@
     </section>
 </template>
 <script>
-export default {};
+import PrimaryButton from "@/components/PrimaryButton";
+export default {
+    components: {
+        PrimaryButton
+    }
+};
 </script>
 <style>
 

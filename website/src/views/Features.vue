@@ -14,7 +14,7 @@
                     <div class="col-lg-10 pt-150">
                         <h2 class="display-3 text-white big-title">Works everywhere. Across all apps.</h2>
                         <p class="lead text-white subtitle">PixelsMeasure works on the whole screen, across all apps, and you can
-                            measure anything.</p>
+                            <b>measure anything</b>.</p>
                     </div>
                 </div>
             </div>
