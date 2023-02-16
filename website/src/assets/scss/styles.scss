@@ -100,3 +100,11 @@
     color: $blue;
     background-color: rgba(255, 255, 255, 0.9);
 }
+
+.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+}
