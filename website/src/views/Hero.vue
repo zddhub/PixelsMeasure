@@ -25,8 +25,8 @@
             </div>
         </div>
 
-        <div class="container container-lg">
-            <div class="row justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center margin-0">
                 <div class="col-md-0">
                     <div class="card shadow border-0">
                         <img class="card-img" data-src="img/PixelsMeasure.gif" src="img/PixelsMeasure.gif" lazy="loaded"

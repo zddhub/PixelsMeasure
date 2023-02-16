@@ -1,19 +1,25 @@
 <template>
     <div>
         <hero></hero>
-        <landing></landing>
+        <features></features>
+        <explore></explore>
+        <promote></promote>
     </div>
 </template>
 <script>
 import Hero from "./Hero.vue";
-import Landing from "./Landing.vue";
+import Features from "./Features.vue";
+import Explore from "./Explore.vue";
+import Promote from "./Promote.vue";
 
 
 export default {
   name: "homepage",
   components: {
     Hero,
-    Landing
+    Features,
+    Explore,
+    Promote
   }
 };
 </script>
