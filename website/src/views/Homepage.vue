@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      data: data.en
+      data: data[this.$i18n.locale]
     }
   }
 };

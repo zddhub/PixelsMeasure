@@ -20,7 +20,7 @@
             <ul class="navbar-nav align-items-lg-center ml-lg-auto">
                 <li class="nav-item" v-for="menu in header.menus" :key="menu.title">
                     <a class="nav-link nav-link-icon" :href="menu.url"
-                       :target="menu.title === 'Privacy' ? '' : '_blank'" rel="noopener" data-toggle="tooltip" title="">
+                       :target="menu.url === '/#/privacy' ? '' : '_blank'" rel="noopener" data-toggle="tooltip" title="">
                         <span class="nav-link-inner--text">{{ menu.title }}</span>
                     </a>
                 </li>
@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      header: data.en.header
+      header: data[this.$i18n.locale].header
     }
   }
 };
