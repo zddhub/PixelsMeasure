@@ -131,3 +131,43 @@
         margin-bottom: 1rem;
     }
 }
+
+.player-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    background-color: rgba(14,12,27,.9);
+    transition: opacity .2s ease;
+    display: flex;
+    opacity: 1;
+    pointer-events: all;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-wrap {
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    transition: all .1s ease;
+    scale:1.2;
+}
+
+.icon-shape-close {
+    color: white;
+    background-color: rgba(14,12,27, .9);
+}

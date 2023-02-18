@@ -11,14 +11,24 @@
 
                         <div class="btn-wrapper">
                             <primary-button></primary-button>
-                            <base-button tag="a" href="https://youtu.be/Y7_aRwq7gz4" class="btn btn-1 btn-outline-primary">
+                            <div tag="a" @click="showVideo = !showVideo" class="btn btn-1 btn-outline-primary">
                                 <i class="fa fa-play-circle-o mr-2"></i>
                                 Watch this video
-                            </base-button>
+                            </div>
                         </div>
                         <br /><br /><br />
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="player-modal" v-if="showVideo">
+            <div @click="showVideo = !showVideo" class="close">
+                <icon name="fa fa-close" type="close" rounded></icon>
+            </div>
+            <div class="player-wrap" v-click-outside="closeVideo">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Y7_aRwq7gz4?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelsmeasure.com&amp;widgetid=1" title="PixelsMeasure for MacOS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
             </div>
         </div>
 
@@ -41,6 +51,18 @@ import PrimaryButton from "@/components/PrimaryButton";
 export default {
     components: {
         PrimaryButton
+    },
+    data() {
+        return {
+            showVideo: false
+        }
+    },
+    methods: {
+        closeVideo(element) {
+            if (this.showVideo && element.target.className == 'player-modal') {
+                this.showVideo = false;
+            }
+        }
     }
 };
 </script>
