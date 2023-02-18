@@ -30,7 +30,7 @@ export default new Router({
     },
     {
       path: "*",
-      name: "homepage",
+      name: "others",
       components: {
         header: AppHeader,
         default: Homepage,

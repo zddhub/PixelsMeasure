@@ -8,11 +8,11 @@
                v-click-outside="closeDropDown">
 
         <slot name="title">
-            <a class="dropdown-toggle nav-link"
+            <a class="dropdown-toggle nav-link dropdown-title"
                :class="{'no-caret': hideArrow}"
                data-toggle="dropdown">
                 <i :class="icon"></i>
-                <span class="no-icon">{{title}}</span>
+                <span class="no-icon nav-link-inner--text">{{title}}</span>
             </a>
         </slot>
         <ul class="dropdown-menu"

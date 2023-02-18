@@ -22,9 +22,9 @@ export default {
     Explore,
     Promote
   },
-  data() {
-    return {
-      data: data[this.$i18n.locale]
+  computed: {
+    data()  {
+        return data[this.$root.$i18n.locale]
     }
   }
 };

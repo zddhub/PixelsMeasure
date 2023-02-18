@@ -195,3 +195,12 @@
         filter: drop-shadow(2px 2px 8px rgb(140 160 230 / 30%));
     }
 }
+
+.dropdown-title {
+    span {
+        font-size: 1rem;
+    }
+
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}

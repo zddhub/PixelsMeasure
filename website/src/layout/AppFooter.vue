@@ -26,10 +26,14 @@ export default {
   name: 'app-footer',
   data() {
     return {
-      year: new Date().getFullYear(),
-      footer: data[this.$i18n.locale].footer
+      year: new Date().getFullYear()
     }
-  }
+  },
+  computed: {
+    footer()  {
+        return data[this.$root.$i18n.locale].footer
+    }
+  },
 };
 </script>
 <style>

@@ -25,6 +25,12 @@
                     </a>
                 </li>
 
+                <li class="nav-item dropdown">
+                    <base-dropdown :title="langs[this.$i18n.locale]">
+                        <a class="dropdown-item" v-for="language in this.languages()" :key="language.locale" @click="selectOption(language)">{{ language.title }}</a>
+                    </base-dropdown>
+                </li>
+
                 <li class="nav-item d-none d-lg-block ml-lg-4">
                     <primary-button :text="header.download.title" :url="header.download.url"></primary-button>
                 </li>
@@ -34,6 +40,7 @@
 </template>
 <script>
 import BaseNav from "@/components/BaseNav";
+import BaseDropdown from "@/components/BaseDropdown";
 import CloseButton from "@/components/CloseButton";
 import PrimaryButton from "@/components/PrimaryButton";
 import data from "../data.json";
@@ -41,12 +48,39 @@ import data from "../data.json";
 export default {
   components: {
     BaseNav,
+    BaseDropdown,
     CloseButton,
     PrimaryButton
   },
   data() {
     return {
-      header: data[this.$i18n.locale].header
+      langs: {
+        "en": "English",
+        "cn": "简体中文"
+      }
+    }
+  },
+  computed: {
+    header()  {
+        return data[this.$root.$i18n.locale].header
+    }
+  },
+  methods: {
+    selectOption(language) {
+        this.$root.$i18n.locale = language.locale
+        localStorage.setItem('locale', language.locale)
+    },
+    languages() {
+        return [
+            {
+                "locale": "en",
+                "title": "English"
+            },
+            {
+                "locale": "cn",
+                "title": "简体中文"
+            }
+        ]
     }
   }
 };
