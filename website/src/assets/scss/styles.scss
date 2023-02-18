@@ -112,3 +112,22 @@
     z-index: 999;
     background-color: white;
 }
+
+.btn:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.btn {
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+    width: 250px;
+}
+
+@media (max-width: 576px) {
+    .btn:not(:last-child) {
+        margin-right: 0.1rem;
+    }
+    .btn {
+        margin-bottom: 1rem;
+    }
+}
