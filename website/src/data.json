@@ -37,7 +37,7 @@
                     "title": "Measure distance",
                     "subtitle": "Quickly determine the distance between any elements on your screen",
                     "outlines": [
-                        "Hold dimensions on the screen", "Copy to clipboard"
+                        "Hold dimensions on the screen", "Support short distance"
                     ]
                 },
                 {
@@ -117,6 +117,129 @@
                 },
                 {
                     "title": "Privacy",
+                    "url": "/#/privacy"
+                }
+            ]
+        }
+    },
+    "cn": {
+        "header": {
+            "title": "PixelsMeasure",
+            "download": {
+                "title": "立即下载",
+                "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
+            },
+            "menus": [
+                {
+                    "title": "隐私策略",
+                    "url": "/#/privacy"
+                },
+                {
+                    "title": "联系我们",
+                    "url": "mailto:zddhub@gmail.com"
+                },
+                {
+                    "title": "Github",
+                    "url": "https://github.com/zddhub/PixelsMeasure"
+                }
+            ]
+        },
+        "hero": {
+            "slogan": "一个快捷和有效的屏幕测量工具",
+            "video": "观看视频",
+            "download": {
+                "title": "立即下载",
+                "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
+            }
+        },
+        "features": {
+            "title": "任何应用内都可以使用",
+            "subtitle": "无论任何应用任何屏幕角落， PixelsMeasure 都能轻松驾驭、完美运行，让您<b>测量任何物体</b>。",
+            "items": [
+                {
+                    "title": "测量距离",
+                    "subtitle": "快速地获取屏幕上任何元素或物体之间的距离",
+                    "outlines": [
+                        "保持屏幕上的尺寸", "支持短距离测量"
+                    ]
+                },
+                {
+                    "title": "测量物体",
+                    "subtitle": "只需在周围的区域拖动，便会立即自动地找到任何物体的边界",
+                    "outlines": [
+                        "神奇般地吸附与捕捉物体", "一次测量多个物体"
+                    ]
+                },
+                {
+                    "title": "十字模式",
+                    "subtitle": "瞬间校准屏幕上所有物体的对齐性，并显示当前光标位置",
+                    "outlines": [
+                        "瞬间对齐校准"
+                    ]
+                },
+                {
+                    "title": "用户友好的编辑",
+                    "subtitle": "使用我们的编辑工具轻松撤销和重做您的测量",
+                    "outlines": [
+                        "撤销和重做您的测量"
+                    ]
+                },
+                {
+                    "title": "屏幕截图",
+                    "subtitle": "使用系统截图工具轻松拍摄屏幕截图并与团队分享",
+                    "outlines": [
+                        "支持系统屏幕截图工具"
+                    ]
+                }
+            ]
+        },
+        "explore": {
+            "title": "更多功能等待你发现",
+            "subtitle": "准备好了吗？",
+            "items": [
+                {
+                    "title": "快捷键",
+                    "subtitle": "设置一个主热键，并根据需求调整所有其他的快捷方式。",
+                    "icon": "fa fa-keyboard-o"
+                },
+                {
+                    "title": "更改外观",
+                    "subtitle": "在明暗模式之间进行替换、调整颜色。",
+                    "icon": "fa fa-moon-o"
+                },
+                {
+                    "title": "多屏幕支持",
+                    "subtitle": "在多显示器上享受无缝操作",
+                    "icon": "fa fa-television"
+                },
+                {
+                    "title": "全球可访问性",
+                    "subtitle": "支持多种语言，使其对全球用户都可以访问",
+                    "icon": "fa fa-globe"
+                }
+            ]
+        },
+        "promote": {
+            "title": "获取 PixelsMeasure",
+            "subtitle": "不要犹豫，立即提升你的屏幕测量体验吧",
+            "download": {
+                "title": "立即下载",
+                "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
+            }
+        },
+        "footer": {
+            "copyright": "ZDDHUB | 版权所有",
+            "menus": [
+                {
+                    "title": "文档",
+                    "url": "https://github.com/zddhub/PixelsMeasure"
+                },
+                {
+                    "title": "博客",
+                    "url": "https://zddhub.com"
+                },
+                {
+                    "title": "隐私策略",
                     "url": "/#/privacy"
                 }
             ]
