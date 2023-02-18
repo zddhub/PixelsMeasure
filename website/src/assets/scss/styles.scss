@@ -79,11 +79,11 @@
     background-position: 100%;
 }
 
-.btn-outline-primary, .btn-outline-primary:hover {
-    color: $blue;
-    background-color: transparent;
-    background-image: none;
-    border-color: $blue;
+.btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active {
+    color: $blue !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: $blue !important;
 }
 
 .btn-outline-primary:hover {
