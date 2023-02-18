@@ -20,55 +20,15 @@
                     <div class="row justify-content-center">
                         <div class="col-lg-12">
                             <div class="row row-grid">
-                                <div class="col-lg-3">
+                                <div class="col-lg-3" v-for="item in explore.items" :key="item.title">
                                     <div class="border-0" shadow body-classes="py-5">
                                         <div class="row justify-content-center">
-                                        <icon name="fa fa-keyboard-o" type="success" rounded class="mb-4">
+                                        <icon :name="item.icon" type="success" rounded class="mb-4">
                                         </icon>
    
                                         </div>
-                                        <h6 class="text-white subtitle">Keyboard shortcuts</h6>
-                                        <p class="description text-white mt-0">Set a global hotkey and adjust all other shortcuts
-                                            to your needs.</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="border-0" shadow body-classes="py-5">
-                                        <div class="row justify-content-center">
-                                            <icon name="fa fa-moon-o" type="success" rounded class="mb-4">
-                                            </icon>
-                                            
-                                        </div>
-                                        <h6 class="text-white subtitle">Change appearance</h6>
-                                        <p class="description text-white mt-0">Choose between light and dark mode and adjust the
-                                            colors.</p>
-
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="border-0" shadow body-classes="py-5">
-                                        <div class="row justify-content-center">
-                                        <icon name="fa fa-television" type="success" rounded class="mb-4">
-                                        </icon>
-                                        
-                                        </div>
-
-                                        <h6 class="text-white subtitle">Multiple displays</h6>
-                                        <p class="description text-white mt-0">Enjoy seamless operation across multiple monitors
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div class="border-0" shadow body-classes="py-5">
-                                        <div class="row justify-content-center">
-                                        <icon name="fa fa-globe" type="success" rounded class="mb-4">
-                                        </icon>
-                                        
-                                        </div>
-                                        <h6 class="text-white subtitle">Global accessibility</h6>
-                                        <p class="description text-white mt-0">Support multiple languages, making it accessible to
-                                            users around the world
-                                        </p>
+                                        <h6 class="text-white subtitle">{{ item.title }}</h6>
+                                        <p class="description text-white mt-0">{{ item.subtitle }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -80,8 +40,8 @@
                 <div class="container pb-80">
                     <div class="row justify-content-center text-center">
                         <div class="col-lg-9">
-                            <h2 class="display-3 text-white title">And much more, waiting for you to explore </h2>
-                            <p class="lead text-white subtitle">Get ready for a magical measurement experience.</p>
+                            <h2 class="display-3 text-white title">{{ explore.title }}</h2>
+                            <p class="lead text-white subtitle">{{ explore.subtitle }}</p>
                         </div>
                     </div>
                 </div>
@@ -90,5 +50,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        explore: Object
+    }
+};
 </script>

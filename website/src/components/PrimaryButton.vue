@@ -1,5 +1,5 @@
 <template>
-    <base-button tag="a" type="primary" href="https://apps.apple.com/app/pixelsmeasure/id1638740542" class="btn btn-1 btn-primary">
+    <base-button tag="a" type="primary" :href=url class="btn btn-1 btn-primary">
         <i class="fa fa-cloud-download mr-2"></i>
         {{ text }}
     </base-button>
@@ -7,12 +7,17 @@
 
 <script>
 export default {
-  name: "primary button",
+  name: "PrimaryButton",
   props: {
     text: {
       type: String,
-      default: "Download now",
+      default: "",
       description: "Button text"
+    },
+    url: {
+      type: String,
+      default: "",
+      description: "href url"
     }
   }
 }

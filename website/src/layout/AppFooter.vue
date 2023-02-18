@@ -5,20 +5,13 @@
             <div class="row align-items-center justify-content-md-between">
                 <div class="col-md-6">
                     <div class="copyright">
-                        &copy; 2022-{{year}}
-                        <a href="https://zddhub.com" target="_blank" rel="noopener">ZDDHUB</a> | All rights reserved
+                        &copy; 2022-{{year}} {{ footer.copyright }}
                     </div>
                 </div>
                 <div class="col-md-6">
                     <ul class="nav nav-footer justify-content-end">
-                        <li class="nav-item">
-                            <a href="https://github.com/zddhub/PixelsMeasure" class="nav-link" target="_blank" rel="noopener">Documents</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="https://github.com/zddhub" class="nav-link" target="_blank" rel="noopener">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <router-link to="/privacy" class="nav-link nav-link-icon"><span class="nav-link-inner--text">Privacy</span></router-link>
+                        <li class="nav-item" v-for="menu in footer.menus">
+                            <a :href="menu.url" class="nav-link" :target="menu.title === 'Privacy' ? '' : '_blank'" rel="noopener">{{ menu.title }}</a>
                         </li>
                     </ul>
                 </div>
@@ -27,11 +20,14 @@
     </footer>
 </template>
 <script>
+import data from "../data.json";
+
 export default {
   name: 'app-footer',
   data() {
     return {
-      year: new Date().getFullYear()
+      year: new Date().getFullYear(),
+      footer: data.en.footer
     }
   }
 };

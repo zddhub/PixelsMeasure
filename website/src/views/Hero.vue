@@ -6,14 +6,14 @@
                     <div class="col-lg-10 text-center pt-lg">
                         <br />
                         <!-- <img src="img/brand/logo_128.png" style="width: 128px;" class=""> -->
-                        <h1 class="big-title heading-padding">The fastest tool for measuring anything on your screen</h1>
+                        <h1 class="big-title heading-padding">{{ hero.slogan }}</h1>
                         <br />
 
                         <div class="btn-wrapper">
-                            <primary-button></primary-button>
+                            <primary-button :text="hero.download.title" :url="hero.download.url"></primary-button>
                             <div tag="a" @click="showVideo = !showVideo" class="btn btn-1 btn-outline-primary">
                                 <i class="fa fa-play-circle-o mr-2"></i>
-                                Watch this video
+                                {{ hero.video }}
                             </div>
                         </div>
                         <br /><br /><br />
@@ -51,6 +51,9 @@ import PrimaryButton from "@/components/PrimaryButton";
 export default {
     components: {
         PrimaryButton
+    },
+    props: {
+        hero: Object
     },
     data() {
         return {
