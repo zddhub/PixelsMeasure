@@ -1,0 +1,115 @@
+[
+    {
+        "en": {
+            "title": "PixelsMeasure",
+            "download": {
+                "text": "Download now",
+                "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
+            },
+            "header": {
+                "menus": [
+                    {
+                        "privacy": "Privacy",
+                        "url": "/privacy"
+                    },
+                    {
+                        "contact": "Contact us",
+                        "url": "mailto:zddhub@gmail.com"
+                    },
+                    {
+                        "github": "Github",
+                        "url": "https://github.com/zddhub/PixelsMeasure"
+                    }
+                ]
+            },
+            "hero": {
+                "slogan": "The fastest tool for measuring anything on your screen",
+                "video": "Watch this video"
+            },
+            "features": {
+                "title": "Works everywhere. Across all apps.",
+                "subtitle": "PixelsMeasure works on the whole screen, across all apps, and you can <b>measure anything</b>.",
+                "items": [
+                    {
+                        "title": "Measure distance",
+                        "subtitle": "Quickly determine the distance between any elements on your screen",
+                        "outlines": [
+                            "Hold dimensions on the screen", "Copy to clipboard"
+                        ]
+                    },
+                    {
+                        "title": "Measure objects",
+                        "subtitle": "Instantly identify the bounds of any object by simply dragging an area around it",
+                        "outlines": [
+                            "Magically snaps to the object", "Measure multiple objects at once"
+                        ]
+                    },
+                    {
+                        "title": "Cross mode",
+                        "subtitle": "Ensure perfect alignment of all elements on your screen, which also displays your pointer position",
+                        "outlines": [
+                            "Instantly check alignment"
+                        ]
+                    },
+                    {
+                        "title": "User-friendly editing",
+                        "subtitle": "Effortlessly undo and redo your measurements with our edit tool",
+                        "outlines": [
+                            "Undo and redo your measurements"
+                        ]
+                    },
+                    {
+                        "title": "Take a screenshot",
+                        "subtitle": "Easily take screenshots and share them with your team with the system screenshot tool",
+                        "outlines": [
+                            "Coordinate with system screenshot tool"
+                        ]
+                    }
+                ]
+            },
+            "explore": {
+                "title": "And much more, waiting for you to explore",
+                "subtitle": "Get ready for a magical measurement experience.",
+                "items": [
+                    {
+                        "title": "Keyboard shortcuts",
+                        "subtitle": "Set a global hotkey and adjust all other shortcuts to your needs."
+                    },
+                    {
+                        "title": "Change appearance",
+                        "subtitle": "Choose between light and dark mode and adjust the colors."
+                    },
+                    {
+                        "title": "Multiple displays",
+                        "subtitle": "Enjoy seamless operation across multiple monitors"
+                    },
+                    {
+                        "title": "Global accessibility",
+                        "subtitle": "Support multiple languages, making it accessible to users around the world"
+                    }
+                ]
+            },
+            "promote": {
+                "title": "Get PixelsMeasure",
+                "subtitle": "Don't hesitate to upgrade your measurement experience."
+            },
+            "footer": {
+                "copyright": "© 2022-2023 ZDDHUB | All rights reserved",
+                "menus": [
+                    {
+                        "document": "Document",
+                        "url": "https://github.com/zddhub/PixelsMeasure"
+                    },
+                    {
+                        "blog": "Blog",
+                        "url": "https://zddhub.com"
+                    },
+                    {
+                        "privacy": "Privacy",
+                        "url": "/privacy"
+                    }
+                ]
+            }
+        }
+    }
+]
