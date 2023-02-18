@@ -35,12 +35,12 @@
         <div class="container">
             <div class="row justify-content-center margin-0">
                 <div class="col-md-0">
-                    <div class="card shadow border-0">
+                    <div class="card shadow border-0 screenshot" @click="showVideo = !showVideo">
                         <img class="card-img" data-src="img/PixelsMeasure.gif" src="img/PixelsMeasure.gif" lazy="loaded"
             width="80%" />
+                        <i class="fa fa-play-circle play-btn" rounded></i>
                     </div>
                 </div>
-
             </div>
         </div>
         
