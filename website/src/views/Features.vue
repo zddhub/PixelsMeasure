@@ -40,7 +40,7 @@
                                     </li>
                                     <li class="py-2">
                                         <div class="d-flex align-items-center">
-                                            <badge type="success" circle class="mr-3" icon="fa fa-clone"></badge>
+                                            <badge type="success" circle class="mr-3" icon="fa fa-compress"></badge>
                                             <h6 class="mb-0">{{ features.items[0].outlines[1] }}</h6>
                                         </div>
                                     </li>
