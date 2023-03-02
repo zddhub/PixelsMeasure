@@ -21,7 +21,7 @@
                         <div class="col-lg-12">
                             <div class="row row-grid">
                                 <div class="col-lg-3" v-for="item in explore.items" :key="item.title">
-                                    <div class="border-0" shadow body-classes="py-5">
+                                    <div class="border-0 justify-content-center" shadow body-classes="py-5">
                                         <div class="row justify-content-center">
                                         <icon :name="item.icon" type="success" rounded class="mb-4">
                                         </icon>
