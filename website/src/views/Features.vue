@@ -137,13 +137,13 @@
                         </div>
                         <div class="col-md-6 order-md-1">
                             <div class="pr-md-5">
-                                <h3 class="title">{{ features.items[3].title }}</h3>
-                                <p class="subtitle">{{ features.items[3].subtitle }}</p>
+                                <h3 class="title">{{ features.items[4].title }}</h3>
+                                <p class="subtitle">{{ features.items[4].subtitle }}</p>
                                 <ul class="list-unstyled mt-5">
                                     <li class="py-2">
                                         <div class="d-flex align-items-center">
                                             <badge type="success" circle class="mr-3" icon="fa fa-camera"></badge>
-                                            <h6 class="mb-0">{{ features.items[3].outlines[0] }}</h6>
+                                            <h6 class="mb-0">{{ features.items[4].outlines[0] }}</h6>
                                         </div>
                                     </li>
                                 </ul>
