@@ -8,10 +8,6 @@
             },
             "menus": [
                 {
-                    "title": "Privacy",
-                    "url": "/#/privacy"
-                },
-                {
                     "title": "Contact us",
                     "url": "mailto:zddhub@gmail.com"
                 },
@@ -118,6 +114,10 @@
                 {
                     "title": "Privacy",
                     "url": "/#/privacy"
+                },
+                {
+                    "title": "Terms of Service",
+                    "url": "/#/terms-of-service"
                 }
             ]
         }
@@ -241,6 +241,10 @@
                 {
                     "title": "隐私策略",
                     "url": "/#/privacy"
+                },
+                {
+                    "title": "用户协议",
+                    "url": "/#/terms-of-service"
                 }
             ]
         }

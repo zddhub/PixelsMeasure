@@ -4,6 +4,7 @@ import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
 import Homepage from "./views/Homepage.vue";
 import Privacy from "./views/Privacy.vue";
+import TermsOfService from "./views/TermsOfService.vue";
 
 Vue.use(Router);
 
@@ -25,6 +26,15 @@ export default new Router({
       components: {
         header: AppHeader,
         default: Privacy,
+        footer: AppFooter
+      }
+    },
+    {
+      path: "/terms-of-service",
+      name: "TermsOfService",
+      components: {
+        header: AppHeader,
+        default: TermsOfService,
         footer: AppFooter
       }
     },

@@ -11,7 +11,7 @@
                 <div class="col-md-6">
                     <ul class="nav nav-footer justify-content-end">
                         <li class="nav-item" v-for="menu in footer.menus" :key="menu.title">
-                            <a :href="menu.url" class="nav-link" :target="menu.url === '/#/privacy' ? '' : '_blank'" rel="noopener">{{ menu.title }}</a>
+                            <a :href="menu.url" class="nav-link" :target="(menu.url === '/#/privacy' || menu.url === '/#/terms-of-service') ? '' : '_blank'" rel="noopener">{{ menu.title }}</a>
                         </li>
                     </ul>
                 </div>
