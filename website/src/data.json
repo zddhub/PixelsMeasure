@@ -131,10 +131,6 @@
             },
             "menus": [
                 {
-                    "title": "隐私策略",
-                    "url": "/#/privacy"
-                },
-                {
                     "title": "联系我们",
                     "url": "mailto:zddhub@gmail.com"
                 },
