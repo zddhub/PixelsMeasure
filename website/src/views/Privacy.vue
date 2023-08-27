@@ -11,7 +11,7 @@
 Update date: Feb 12, 2023
 
 
-Thank you for choosing to use PixelsMeasure.
+Thank you for choosing to use PixelsMeasure ("PixelsMeasure Pro", "App," "we," "us," or "our").
 
 If you have any questions, comments or suggestions about this privacy policy or personal information protection, you can contact PixelsMeasure in the following ways, and PixelsMeasure will accept and process it within 15 working days:
 

@@ -2,7 +2,7 @@
 
 Effective Date: Aug 27, 2023
 
-Thank you for choosing PixelsMeasure Pro ("PixelsMeasure Pro", "App," "we," "us," or "our"). By accessing or using the PixelsMeasure Pro App and its services ("Service") in any way, including subscribing to its weekly, monthly, or yearly plans, you agree to be bound by these Terms of Service ("Terms"). Please read these Terms carefully before using the App.
+Thank you for choosing PixelsMeasure ("PixelsMeasure Pro", "App," "we," "us," or "our"). By accessing or using the PixelsMeasure Pro App and its services ("Service") in any way, including subscribing to its weekly, monthly, or yearly plans, you agree to be bound by these Terms of Service ("Terms"). Please read these Terms carefully before using the App.
 
 ## Acceptance of Terms
 
