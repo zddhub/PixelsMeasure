@@ -13,7 +13,7 @@
                             <primary-button :text="hero.download.title" :url="hero.download.url"></primary-button>
                             <div tag="a" @click="showVideo = !showVideo" class="btn btn-1 btn-outline-primary">
                                 <i class="fa fa-play-circle-o mr-2"></i>
-                                {{ hero.video }}
+                                {{ hero.video.title }}
                             </div>
                         </div>
                         <br /><br /><br />
@@ -28,7 +28,7 @@
                 <icon name="fa fa-close" type="close" rounded></icon>
             </div>
             <div class="player-wrap" v-click-outside="closeVideo">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Y7_aRwq7gz4?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelsmeasure.com&amp;widgetid=1&amp;autoplay=1" title="PixelsMeasure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+                <iframe width="100%" height="100%" :src="hero.video.url" title="PixelsMeasure" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
             </div>
         </div>
 

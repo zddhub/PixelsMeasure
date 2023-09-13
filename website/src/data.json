@@ -19,7 +19,10 @@
         },
         "hero": {
             "slogan": "Measure anything on your screen",
-            "video": "Watch this video",
+            "video": {
+                "title": "Watch this video",
+                "url": "https://www.youtube.com/embed/Y7_aRwq7gz4?rel=0&amp;modestbranding=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fpixelsmeasure.com&amp;widgetid=1&amp;autoplay=1"
+            },
             "download": {
                 "title": "Download now",
                 "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
@@ -142,7 +145,10 @@
         },
         "hero": {
             "slogan": "一个快捷和有效的屏幕测量工具",
-            "video": "观看视频",
+            "video": {
+                "title": "观看视频",
+                "url": "//player.bilibili.com/player.html?bvid=BV1WM411P71r&page=1"
+            },
             "download": {
                 "title": "立即下载",
                 "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
