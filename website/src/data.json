@@ -69,6 +69,11 @@
                 }
             ]
         },
+        "platform": {
+            "title": "Across multiple Apple platforms",
+            "subtitle": "PixelsMeasure works on your macOS, iOS and iPadOS.",
+            "imageURL": "img/platform.png"
+        },
         "explore": {
             "title": "And much more, waiting for you to explore",
             "subtitle": "Get ready for a magical measurement experience.",
@@ -97,7 +102,7 @@
         },
         "promote": {
             "title": "Get PixelsMeasure",
-            "subtitle": "Don't hesitate to upgrade your measurement experience.",
+            "subtitle": "Don't hesitate to upgrade your measurement experience now.",
             "download": {
                 "title": "Download now",
                 "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
@@ -194,6 +199,11 @@
                     ]
                 }
             ]
+        },
+        "platform": {
+            "title": "支持多平台使用",
+            "subtitle": "PixelsMeasure 能工作在你的 macOS、iOS 和 iPadOS 上.",
+            "imageURL": "img/platform.png"
         },
         "explore": {
             "title": "更多功能等待你发现",

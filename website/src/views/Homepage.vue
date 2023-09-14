@@ -2,6 +2,7 @@
     <div>
         <hero :hero=data.hero></hero>
         <features :features=data.features></features>
+        <platform :platform=data.platform></platform>
         <explore :explore=data.explore></explore>
         <promote :promote=data.promote></promote>
     </div>
@@ -11,6 +12,7 @@
 import Hero from "./Hero.vue";
 import Features from "./Features.vue";
 import Explore from "./Explore.vue";
+import Platform from "./Platform.vue";
 import Promote from "./Promote.vue";
 import data from "../data.json";
 
@@ -20,7 +22,8 @@ export default {
     Hero,
     Features,
     Explore,
-    Promote
+    Promote,
+    Platform,
   },
   computed: {
     data()  {
