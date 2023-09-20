@@ -108,6 +108,10 @@
                 "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
             }
         },
+        "downloadCode": {
+            "title": "Scan to download",
+            "url": "img/qr-code-blue.png"
+        },
         "footer": {
             "copyright": "ZDDHUB | All rights reserved",
             "menus": [
@@ -238,6 +242,10 @@
                 "title": "立即下载",
                 "url": "https://apps.apple.com/app/pixelsmeasure/id1638740542"
             }
+        },
+        "downloadCode": {
+            "title": "扫码下载",
+            "url": "img/qr-code-blue.png"
         },
         "footer": {
             "copyright": "ZDDHUB | 版权所有",

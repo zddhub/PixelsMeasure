@@ -13,8 +13,8 @@
 
 
                             <div class="col-lg-4 text-center">
-                                <img class="qr-code" src="img/qr-code-blue.png" />
-                                <p>Scan to download</p>
+                                <img class="qr-code" :src="downloadCode.url" />
+                                <p>{{ downloadCode.title }}</p>
                             </div>
                         </div>
 
@@ -33,7 +33,8 @@ export default {
         PrimaryButton
     },
     props: {
-        promote: Object
+        promote: Object,
+        downloadCode: Object,
     }
 };
 </script>

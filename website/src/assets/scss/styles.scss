@@ -223,3 +223,21 @@
         text-align: center;
     }
 }
+
+.download-code {
+    position: fixed;
+    right: 200px;
+    top: 100px;
+    background-color: white;
+    z-index: 900;
+    .qr-code {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 1900px) {
+    .download-code {
+        display: none;
+    }
+}
