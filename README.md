@@ -19,7 +19,13 @@ Upgrade your measurement experience with PixelsMeasure now!
 
 [![Download on the App Store](assets/images/download-on-app-store-badge.svg)][Apple_Store]
 
-Requires macOS 13 or later.
+Scan to download
+
+<img src="assets/qr-code/qr-code-blue.png" width="280"/>
+
+### Requires:
+- macOS 13 or later.
+- iOS 17.0 or later.
 
 ![PixelsMeasure](assets/images/PixelsMeasure.gif)
 
