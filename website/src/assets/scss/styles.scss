@@ -208,3 +208,18 @@
 .text-center {
     text-align: center;
 }
+
+.qr-code {
+    width: 280px;
+    height: 280px;
+}
+
+.promote {
+    text-align: left;
+}
+
+@media (max-width: 576px) {
+    .promote {
+        text-align: center;
+    }
+}
