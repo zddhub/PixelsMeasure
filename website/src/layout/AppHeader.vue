@@ -2,7 +2,7 @@
     <header class="header-global">
         <base-nav class="navbar-main sticky" transparent type="" effect="light" expand>
             <router-link slot="brand" class="navbar-brand mr-lg-5" to="/">
-                <img src="img/brand/logo_128.svg" alt="logo">
+                <img src="img/brand/logo_32.svg" alt="logo">
                 <span class="nav-link-inner--menu">{{ header.title }}</span>
             </router-link>
 
