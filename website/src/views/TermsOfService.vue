@@ -61,7 +61,7 @@ These Terms shall be governed by and construed in accordance with the laws of Pi
 
 ## Contact Us
 
-If you have any questions, concerns, or feedback regarding these Terms or the App, please contact us (email to: zddhub@gmail.com).
+If you have any questions, concerns, or feedback regarding these Terms or the App, please contact us (email to: pixelsmeasure@gmail.com).
 
 By using the PixelsMeasure Pro App, you agree to abide by these Terms of Service. Thank you for choosing PixelsMeasure Pro!
 

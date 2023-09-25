@@ -15,7 +15,7 @@ Thank you for choosing to use PixelsMeasure ("PixelsMeasure Pro", "App," "we," "
 
 If you have any questions, comments or suggestions about this privacy policy or personal information protection, you can contact PixelsMeasure in the following ways, and PixelsMeasure will accept and process it within 15 working days:
 
-Email: zddhub@gmail.com
+Email: pixelsmeasure@gmail.com
 
 **Special Note**
 
