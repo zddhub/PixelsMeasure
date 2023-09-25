@@ -24,11 +24,14 @@ Scan to download
 <img src="assets/qr-code/qr-code-blue.png" width="280"/>
 
 ### Requires:
+
 - macOS 13 or later.
 - iOS 17.0 or later.
 - iPadOS 17.0 or later.
 
 ![PixelsMeasure](assets/images/PixelsMeasure.gif)
+
+![cross platforms](assets/platform.png)
 
 ## Features
 
@@ -67,14 +70,6 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 - Adjust tolerance to work with shadows and low-contrast elements.
 - Press `Command + Q` to quit the App at any time.
 
-## Screenshots
-
-### iOS
-
-![measure-distances](assets/platform.png)
-
-See more screenshots [here](https://apps.apple.com/app/pixelsmeasure/id1638740542).
-
 ## Resources
 
 - [Apple Store][Apple_Store]
@@ -94,11 +89,6 @@ GitHub is used for bug tracking. Please search [existing issues](https://github.
 ## Download
 
 [![Download on the App Store](assets/images/download-on-app-store-badge.svg)][Apple_Store]
-
-### Requires:
-- macOS 13 or later.
-- iOS 17.0 or later.
-- iPadOS 17.0 or later.
 
 Scan to download
 
