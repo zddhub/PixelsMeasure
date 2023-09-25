@@ -11,7 +11,7 @@
 	<br>
 </div>
 
-[PixelsMeasure][Apple_Store] works on the whole screen, across all apps, and you can measure anything.
+[PixelsMeasure][Apple_Store] works on the whole screen, across all apps, across Apple platforms, and you can measure anything.
 
 Upgrade your measurement experience with PixelsMeasure now!
 
@@ -26,6 +26,7 @@ Scan to download
 ### Requires:
 - macOS 13 or later.
 - iOS 17.0 or later.
+- iPadOS 17.0 or later.
 
 ![PixelsMeasure](assets/images/PixelsMeasure.gif)
 
@@ -41,7 +42,7 @@ Scan to download
 * Multi-monitor support: Enjoy seamless operation across multiple monitors
 * Global accessibility: PixelsMeasure supports multiple languages, making it accessible to users around the world
 
-## Keyboard shortcuts
+## Keyboard shortcuts (for mac)
 
 You can use the following keyboard shortcuts in the app:
 
@@ -60,7 +61,7 @@ You can use the following keyboard shortcuts in the app:
 
 You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
-## Tips
+## Tips (for mac)
 
 - Open `Help -> Onboarding Guide` menu to explore major features and get started quickly.
 - Adjust tolerance to work with shadows and low-contrast elements.
@@ -68,15 +69,11 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
 ## Screenshots
 
-![measure-distances](assets/images/screenshots/measure-distances.png)
+### iOS
 
-![measure-objects](assets/images/screenshots/measure-objects.png)
+![measure-distances](assets/platform.png)
 
-![cross-mode](assets/images/screenshots/cross-mode.png)
-
-![tolerance-mode](assets/images/screenshots/tolerance.png)
-
-See more screenshots [here](https://github.com/zddhub/PixelsMeasure/tree/main/assets/images/screenshots).
+See more screenshots [here](https://apps.apple.com/app/pixelsmeasure/id1638740542).
 
 ## Resources
 
@@ -98,8 +95,13 @@ GitHub is used for bug tracking. Please search [existing issues](https://github.
 
 [![Download on the App Store](assets/images/download-on-app-store-badge.svg)][Apple_Store]
 
-Requires macOS 13 or later.
+### Requires:
+- macOS 13 or later.
+- iOS 17.0 or later.
+- iPadOS 17.0 or later.
 
+Scan to download
 
+<img src="assets/qr-code/qr-code-blue.png" width="280"/>
 
 [Apple_Store]: https://apps.apple.com/app/pixelsmeasure/id1638740542
