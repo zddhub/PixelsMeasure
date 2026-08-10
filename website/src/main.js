@@ -26,10 +26,17 @@ Vue.config.productionTip = false;
 Vue.use(Argon);
 Vue.use(VueI18n);
 
+const locale = (() => {
+  try {
+    return localStorage.getItem('locale') || 'en';
+  } catch (e) {
+    return 'en';
+  }
+})();
+
 const i18n = new VueI18n({
-  locale: localStorage.getItem('locale') || 'en',
+  locale,
   fallbackLocale: 'en',
-  sync: true,
   globalInjection: true,
 });
 
