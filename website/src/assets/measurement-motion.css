@@ -1,0 +1,49 @@
+.pm-object-draft, .pm-tolerance-low { opacity: 0; }
+.pm-demo-live { cursor: none; }
+.pm-object-draft { transform-origin: center; transform-box: fill-box; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .pm-demo-running .pm-object-draft { animation: pm-draw-selection 3.2s ease-in-out both infinite; }
+  .pm-demo-running .pm-object-result { animation: pm-object-fit 3.2s both infinite; }
+  .pm-demo-running .pm-guide-left { animation: pm-left-snap 4s ease-in-out both infinite; }
+  .pm-demo-running .pm-guide-right { animation: pm-right-snap 4s ease-in-out both infinite; }
+  .pm-demo-running :is(.pm-guide-readout, .pm-cross-readout) { animation: pm-result-in 4s both infinite; }
+  .pm-demo-running .pm-cross-x { animation: pm-cross-x 4s ease-in-out both infinite; }
+  .pm-demo-running .pm-cross-y { animation: pm-cross-y 4s ease-in-out both infinite; }
+  .pm-demo-running .pm-tolerance-low { animation: pm-low-tolerance 3.8s both infinite; }
+  .pm-demo-running .pm-tolerance-high { animation: pm-high-tolerance 3.8s both infinite; }
+}
+
+@keyframes pm-draw-selection {
+  0% { opacity: 0; transform: scale(.03); transform-origin: 0 0; }
+  12% { opacity: 1; }
+  36% { transform: scale(1); transform-origin: 0 0; }
+  44% { opacity: 1; transform: scale(1); }
+  57%, 100% { opacity: 0; transform: scale(.765, .724); }
+}
+@keyframes pm-object-fit { 0%, 53% { opacity: 0; } 60%, 100% { opacity: 1; } }
+
+@keyframes pm-left-snap {
+  0%, 7% { transform: translateX(-40px); }
+  34% { transform: translateX(-16px); }
+  40%, 100% { transform: translateX(0); }
+}
+@keyframes pm-right-snap {
+  0%, 39% { opacity: 0; transform: translateX(-68px); }
+  45% { opacity: 1; transform: translateX(-68px); }
+  64% { transform: translateX(-16px); }
+  70%, 100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes pm-result-in { 0%, 71% { opacity: 0; } 79%, 100% { opacity: 1; } }
+
+@keyframes pm-cross-x {
+  0%, 9% { transform: translateX(-29px); }
+  38%, 100% { transform: translateX(0); }
+}
+@keyframes pm-cross-y {
+  0%, 41% { transform: translateY(-58px); }
+  69%, 100% { transform: translateY(0); }
+}
+
+@keyframes pm-low-tolerance { 0%, 56% { opacity: 1; } 60%, 100% { opacity: 0; } }
+@keyframes pm-high-tolerance { 0%, 56% { opacity: 0; } 60%, 100% { opacity: 1; } }

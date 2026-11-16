@@ -1,40 +1,27 @@
 <template>
-    <footer class="footer has-cards">
-        <div class="container">
-            <hr>
-            <div class="row align-items-center justify-content-md-between">
-                <div class="col-md-6">
-                    <div class="copyright">
-                        &copy; 2022-{{year}} {{ footer.copyright }}
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <ul class="nav nav-footer justify-content-end">
-                        <li class="nav-item" v-for="menu in footer.menus" :key="menu.title">
-                            <a :href="menu.url" class="nav-link" :target="(menu.url === '/#/privacy' || menu.url === '/#/terms-of-service') ? '' : '_blank'" rel="noopener">{{ menu.title }}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+  <footer class="pm-footer">
+    <div class="pm-wrap pm-footer-inner">
+      <small>© 2022–{{ year }} ZDDHUB</small>
+      <nav :aria-label="$i18n.locale === 'cn' ? '页脚导航' : 'Footer navigation'">
+        <router-link to="/privacy">{{ copy.footer[0] }}</router-link>
+        <router-link to="/terms-of-service">{{ copy.footer[1] }}</router-link>
+        <a href="mailto:pixelsmeasure@gmail.com">{{ copy.footer[2] }}</a>
+        <a href="https://github.com/zddhub/PixelsMeasure">{{ copy.footer[3] }}</a>
+        <a href="https://zddhub.com">{{ copy.footer[4] }}</a>
+      </nav>
+    </div>
+  </footer>
 </template>
+
 <script>
-import data from "../data.json";
+import { copyFor } from "../landing-copy";
 
 export default {
-  name: 'app-footer',
-  data() {
-    return {
-      year: new Date().getFullYear()
-    }
-  },
+  data: () => ({ year: new Date().getFullYear() }),
   computed: {
-    footer()  {
-        return data[this.$root.$i18n.locale].footer
+    copy() {
+      return copyFor(this.$i18n.locale);
     }
-  },
+  }
 };
 </script>
-<style>
-</style>
