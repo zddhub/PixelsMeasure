@@ -1,47 +1,37 @@
-PixelsMeasure Terms of Service
-Effective Date: Aug 27, 2023
+# PixelsMeasure Terms of Service
 
-Thank you for choosing PixelsMeasure (“PixelsMeasure Pro”, “App,” “we,” “us,” or “our”). By accessing or using the PixelsMeasure Pro App and its services (“Service”) in any way, including subscribing to its weekly, monthly, or yearly plans, you agree to be bound by these Terms of Service (“Terms”). Please read these Terms carefully before using the App.
+Last updated November 17, 2026
 
-Acceptance of Terms
-By using the PixelsMeasure Pro App, you acknowledge that you have read, understood, and agree to comply with these Terms. If you do not agree with any part of these Terms, please refrain from using the App.
+These terms apply to your use of PixelsMeasure on Mac, iPhone, and iPad. Your app license is governed by the end user license agreement applicable to your App Store download. See [Apple’s Standard EULA](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/).
 
-Subscription Plans
-PixelsMeasure Pro offers subscription plans on a weekly, monthly, and yearly basis. The details of each plan, including pricing and features, are provided within the App’s interface. Your subscription will automatically renew according to the plan you selected unless you cancel it before the renewal date.
+## Free and Pro access
 
-Payment and Billing
-a. You agree to pay the subscription fee associated with the plan you choose. The fees are outlined in the App and may be subject to change. Any changes in fees will be communicated to you in advance.
-b. Payment will be charged to your designated payment method through your chosen app store account (e.g., Apple App Store, Google Play Store) upon confirmation of your subscription.
-c. Subscription renewals will be charged automatically at the end of the subscription period unless you cancel your subscription prior to the renewal date.
+PixelsMeasure offers free features and paid Pro features. Pro is available through a monthly or yearly auto-renewing subscription or a one-time Lifetime purchase. The App Store purchase screen shows the price, billing period, and any trial or offer for which you are eligible.
 
-Cancellation and Refunds
-a. You can cancel your subscription at any time through app store account settings.
-b. Cancellations made before the end of the current subscription period will prevent automatic renewal and further charges.
-c. We do not offer refunds or prorated refunds for unused portions of a subscription period. You will continue to have access to the Service until the end of your current subscription period.
+Lifetime unlocks Pro through a one-time payment. If you already have an active subscription, buying Lifetime does not cancel it. Manage or cancel your subscription separately in your Apple Account settings. To recover eligible purchases, use Restore Purchases with the Apple Account used to buy them.
 
-Changes to the Service and Terms
-a. We reserve the right to modify, suspend, or discontinue the Service or any part thereof at any time without prior notice.
-b. We may update or revise these Terms from time to time. The updated Terms will be posted within the App. Your continued use of the App after such changes constitutes your acceptance of the updated Terms.
+## Billing, renewals, cancellation, and refunds
 
-Privacy
-Your privacy is important to us. Our Privacy Policy explains how we collect, use, and disclose information when you use our Service. By using the App, you consent to our Privacy Policy.
+Apple bills your Apple Account when you confirm a paid purchase. If you accept a trial, Apple will charge the subscription price after the trial unless you cancel in time. Subscriptions renew automatically unless canceled. To avoid renewal, cancel at least 24 hours before your current billing period or trial ends. You can manage or cancel subscriptions in [Apple Account settings](https://support.apple.com/en-us/118428). If you cancel a paid subscription, you generally keep access until the end of the paid period.
 
-User Conduct
-You agree not to use the App for any unlawful or prohibited purpose. You also agree to comply with all applicable laws and regulations while using the Service.
+Apple processes refund requests for App Store purchases. See [how to request a refund from Apple](https://support.apple.com/en-us/118223). Your applicable consumer rights still apply.
 
-Intellectual Property
-All content and materials available through the App, including but not limited to text, graphics, images, and software, are protected by intellectual property laws. You agree not to reproduce, distribute, modify, or create derivative works based on such content without our explicit consent.
+## Your content and acceptable use
 
-Disclaimer of Warranty
-The App and its services are provided “as is” and “as available” without any warranties of any kind, either expressed or implied. We do not warrant that the App will be error-free or uninterrupted.
+You retain any rights you have in the images and documents you use with PixelsMeasure. You are responsible for having permission to capture, import, and share the content you use. Use the app in accordance with applicable law and respect the rights of others.
 
-Limitation of Liability
-To the extent permitted by law, we shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the use of the App or its services.
+PixelsMeasure and its own materials are protected by applicable intellectual property laws and the license terms that accompany the app.
 
-Governing Law
-These Terms shall be governed by and construed in accordance with the laws of PixelsMeasure, without regard to its conflict of law principles.
+## System compatibility
 
-Contact Us
-If you have any questions, concerns, or feedback regarding these Terms or the App, please contact us (email to: pixelsmeasure@gmail.com).
+PixelsMeasure provides full support on the latest publicly released versions of macOS, iOS, and iPadOS. On older versions, you may be unable to install the latest app update or use some features. For the best experience, keep your device updated to the latest publicly released OS version available for it.
 
-By using the PixelsMeasure Pro App, you agree to abide by these Terms of Service. Thank you for choosing PixelsMeasure Pro!
+## Availability and liability
+
+Features may change over time. To the extent permitted by applicable law, the app is provided “as is” and “as available,” without warranties that it will operate without interruption or error. To the extent permitted by applicable law, we are not liable for indirect, incidental, special, or consequential damages arising from use of the app. These terms do not limit rights or remedies that cannot be waived under applicable law.
+
+We will post updates to these terms on this page and revise the date above.
+
+## Privacy and contact
+
+See the [PixelsMeasure Privacy Policy](https://pixelsmeasure.com/#/privacy) for how the app handles information. If you have questions about these terms, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).

@@ -78,9 +78,7 @@ You can customize your shortcuts under `Settings... -> Shortcuts` screen.
 
 ## Privacy Policy
 
-PixelsMeasure collects no information from users. The app runs entirely in a sandbox and does not have access to any data outside of the sandbox. The app also does not use any backend services, third-party analytics or tracking services.
-
-See detailed [Privacy Policy](Privacy.md) for PixelsMeasure](Privacy.md).
+PixelsMeasure processes images and measurements on your device. See the [Privacy Policy](Privacy.md) for details about document storage and App Store purchases.
 
 ## Contributing Bug Reports
 
