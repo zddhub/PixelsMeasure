@@ -349,6 +349,15 @@
 }
 
 .pm-landing .pm-workflow-extra { margin: 20px 0 0; font-size: .9375rem; }
+.pm-workflow-extra code {
+  padding: .12em .36em;
+  border-radius: 4px;
+  background: var(--pm-blue-pale);
+  color: var(--pm-blue);
+  font-size: .94em;
+  font-weight: 650;
+  white-space: nowrap;
+}
 
 .pm-landing .pm-note { margin: 18px 0 0; font-size: .8125rem; }
 

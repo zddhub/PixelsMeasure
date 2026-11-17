@@ -50,7 +50,7 @@ export const landingCopy = {
         alt: "A detail of the palette with the swatch size and gaps marked in red."
       }
     ],
-    workflowExtra: "Keep a layered .pixelsmeasure document for later, or copy values as CSS, JSON, or plain text.",
+    workflowExtra: ["Keep a layered ", " document for later, or copy values as CSS, JSON, or plain text."],
     live: {
       title: "Measure the live screen on Mac.",
       body: "Start from the menu bar. Pin what you find, then choose Open as Document to keep working with the captured image and measurements.",
@@ -123,7 +123,7 @@ export const landingCopy = {
         alt: "调色板的标注细节，以红色显示色块尺寸和间距。"
       }
     ],
-    workflowExtra: "将原图和标注保存为可编辑的 .pixelsmeasure 文档，也可以将读数复制为 CSS、JSON 或纯文本。",
+    workflowExtra: ["将原图和标注保存为可编辑的 ", " 文档，也可以将读数复制为 CSS、JSON 或纯文本。"],
     live: {
       title: "在 Mac 上实时测量屏幕。",
       body: "从菜单栏开始，固定所需的读数。选择「打开为文档」，就能继续编辑捕获的图像和测量结果。",

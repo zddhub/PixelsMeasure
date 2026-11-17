@@ -57,7 +57,7 @@
           </div>
         </li>
       </ol>
-      <p class="pm-workflow-extra">{{ copy.workflowExtra }}</p>
+      <p class="pm-workflow-extra">{{ copy.workflowExtra[0] }}<code>.pixelsmeasure</code>{{ copy.workflowExtra[1] }}</p>
       <article class="pm-live-workflow">
         <div>
           <h3>{{ copy.live.title }}</h3>
