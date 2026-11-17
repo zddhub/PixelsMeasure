@@ -1,49 +1,29 @@
 <template>
   <svg class="pm-demo-canvas"
     :class="{ 'pm-demo-running': running && !paused && !pointer, 'pm-demo-live': pointer }"
-    :viewBox="mode === 'spacing' ? '0 0 640 264' : '156 0 328 240'"
-    role="img" :aria-label="label" @pointerenter="moveProbe" @pointermove="moveProbe"
-    @pointerleave="pointer = null" @pointercancel="pointer = null">
-    <g v-if="mode === 'spacing'">
-      <g v-for="swatch in swatches" :key="swatch.name"
+    :viewBox="artworkViewBox"
+    role="img" :aria-label="label">
+    <g v-if="mode === 'spacing' || mode === 'palette'">
+      <g v-for="swatch in swatches" :key="swatch.name" ref="swatchCards"
         :transform="'translate(' + swatch.x + ' ' + swatch.y + ')'">
         <rect x="-6" y="-6" width="174" height="150" rx="16" fill="#fff" stroke="#e5e9f2"/>
         <rect :width="swatch.width" :height="swatch.height" :rx="swatch.radius" :fill="swatch.color"/>
         <text x="3" y="121" class="pm-canvas-name">{{ swatch.name }}</text>
         <text x="3" y="136" class="pm-canvas-meta">{{ swatch.color }}</text>
       </g>
-      <g v-if="!pointer">
-        <g v-if="showPin(2050)" class="pm-pin-size">
-          <path class="pm-red-line" d="M47 63H209m-162-8v16m162-16v16M109 26v94m-8-94h16m-16 94h16"
-            fill="none"/>
-          <g class="pm-red-tag" transform="translate(121 71)">
-            <rect width="86" height="21" rx="10.5"/>
-            <text x="43" y="10.5">162 × 94 px</text>
-          </g>
-        </g>
-        <g v-if="showPin(3900)" class="pm-pin-gap">
-          <path class="pm-red-line"
-            :d="gapMarker.path" fill="none"/>
-          <g class="pm-red-tag" :transform="gapMarker.transform">
-            <rect width="46" height="22" rx="11"/>
-            <text x="23" y="11">{{ gapMarker.width }} px</text>
-          </g>
-        </g>
-        <g v-if="showPin(5900)" class="pm-pin-bottom">
-          <path class="pm-red-line" d="M447 170v80m-8-80h16m-16 80h16" fill="none"/>
-          <g class="pm-red-tag" transform="translate(457 199)">
-            <rect width="46" height="22" rx="11"/>
-            <text x="23" y="11">80 px</text>
-          </g>
+      <g v-if="mode === 'spacing' && !probePoint">
+        <path class="pm-red-line" :d="gapMarker.path" fill="none"/>
+        <g class="pm-red-tag" :transform="gapLabelTransform">
+          <rect width="46" height="20" rx="10"/>
+          <text x="23" y="10">{{ gapMarker.width }} px</text>
         </g>
       </g>
-      <path d="M41 250h558" stroke="#dedede"/>
       <g v-if="liveReading" class="pm-active-probe" aria-hidden="true">
         <path class="pm-red-line" :d="liveReading.lines" fill="none"/>
         <image :href="cursorImage" :x="probePoint.x - 11" :y="probePoint.y - 11" width="24" height="24"/>
-        <g class="pm-red-tag" :transform="'translate(' + liveReading.labelX + ' ' + liveReading.labelY + ')'">
-          <rect :width="liveReading.labelWidth" height="21" rx="10.5"/>
-          <text :x="liveReading.labelWidth / 2" y="10.5">{{ liveReading.label }}</text>
+        <g class="pm-red-tag" :transform="liveReading.labelTransform">
+          <rect :width="liveReading.labelWidth" height="20" rx="10"/>
+          <text :x="liveReading.labelWidth / 2" y="10">{{ liveReading.label }}</text>
         </g>
       </g>
     </g>
@@ -60,8 +40,10 @@
       <g class="pm-object-result">
         <rect x="242" y="58" width="156" height="110" fill="#ff3b3010" class="pm-red-line"/>
         <g class="pm-red-tag" transform="translate(268 104)">
-          <rect width="104" height="24" rx="12"/>
-          <text x="52" y="12">156 × 110 px</text>
+          <g class="pm-tool-readout">
+            <rect width="104" height="24" rx="12"/>
+            <text x="52" y="12">156 × 110 px</text>
+          </g>
         </g>
       </g>
     </g>
@@ -81,8 +63,10 @@
       <path d="M428 8v215" class="pm-blue-line pm-guide-right" fill="none"/>
       <g class="pm-guide-readout">
         <g class="pm-blue-tag" transform="translate(288 206)">
-          <rect width="64" height="23" rx="11.5"/>
-          <text x="32" y="11.5">216 px</text>
+          <g class="pm-tool-readout">
+            <rect width="64" height="23" rx="11.5"/>
+            <text x="32" y="11.5">216 px</text>
+          </g>
         </g>
       </g>
     </g>
@@ -103,8 +87,10 @@
       <path class="pm-red-line pm-cross-y" d="M162 85h316"/>
       <g class="pm-cross-readout">
         <g class="pm-red-tag" transform="translate(220 91)">
-          <rect width="94" height="23" rx="11.5"/>
-          <text x="47" y="11.5">296, 136 px</text>
+          <g class="pm-tool-readout">
+            <rect width="94" height="23" rx="11.5"/>
+            <text x="47" y="11.5">296, 136 px</text>
+          </g>
         </g>
       </g>
     </g>
@@ -121,12 +107,22 @@
       <text x="296" y="111" class="pm-canvas-meta">PNG</text>
       <g class="pm-tolerance-low">
         <path class="pm-red-line" d="M272 144H440m-168-6v12m168-12v12"/>
-        <g class="pm-red-tag" transform="translate(325 151)"><rect width="62" height="22" rx="11"/><text x="31" y="11">336 px</text></g>
+        <g class="pm-red-tag" transform="translate(325 151)">
+          <g class="pm-tool-readout">
+            <rect width="62" height="22" rx="11"/>
+            <text x="31" y="11">336 px</text>
+          </g>
+        </g>
         <text x="200" y="221" class="pm-canvas-meta">{{ toleranceLabel }}: 8</text>
       </g>
       <g class="pm-tolerance-high">
         <path class="pm-red-line" d="M200 144H440m-240-6v12m240-12v12"/>
-        <g class="pm-red-tag" transform="translate(289 151)"><rect width="62" height="22" rx="11"/><text x="31" y="11">480 px</text></g>
+        <g class="pm-red-tag" transform="translate(289 151)">
+          <g class="pm-tool-readout">
+            <rect width="62" height="22" rx="11"/>
+            <text x="31" y="11">480 px</text>
+          </g>
+        </g>
         <text x="200" y="221" class="pm-canvas-meta">{{ toleranceLabel }}: 32</text>
       </g>
     </g>
@@ -134,7 +130,7 @@
 </template>
 
 <script>
-import { formatLabel, probeAt } from "../measurement-probe";
+import { formatLabel, probeAt, roundedBoundsAt } from "../measurement-probe";
 
 const canvas = { x: 0, y: 0, width: 640, height: 250 };
 const swatches = [
@@ -155,24 +151,25 @@ const gapRight = cards[1].x;
 const gapCenter = (gapLeft + gapRight) / 2;
 const gapMarker = {
   width: gapRight - gapLeft,
-  path: `M${gapLeft} 100H${gapRight}M${gapLeft} 92v16M${gapRight} 92v16`,
-  transform: `translate(${gapCenter - 23} 108)`
+  path: `M${gapLeft} 100H${gapRight}M${gapLeft} 92v16M${gapRight} 92v16`
 };
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
-// Follow the distance storyboard: size, horizontal gap, then space below the card.
-const spacingStops = [
-  { time: 0, x: 35, y: 18 },
-  { time: 1450, x: 109, y: 63 },
-  { time: 2050, x: 109, y: 63 },
-  { time: 2750, x: gapCenter, y: 63 },
-  { time: 3350, x: gapCenter, y: 100 },
-  { time: 3900, x: gapCenter, y: 100 },
-  { time: 4500, x: gapCenter, y: 212 },
-  { time: 5300, x: 447, y: 212 },
-  { time: 5900, x: 447, y: 212 }
+const demoStops = [
+  { time: 1000, x: gapCenter, y: 100 },
+  { time: 1700, x: 110, y: 72 },
+  { time: 2750, x: 110, y: 72 },
+  { time: 3650, x: 335, y: 80 },
+  { time: 4500, x: 335, y: 80 },
+  { time: 4850, x: 335, y: 131 },
+  { time: 5850, x: 335, y: 131 },
+  { time: 6800, x: 515, y: 68 },
+  { time: 7900, x: 515, y: 68 },
+  { time: 8700, x: 515, y: 210 },
+  { time: 9850, x: 515, y: 210 },
+  { time: 11000, x: gapCenter, y: 100 }
 ];
-const spacingDuration = 7000;
+const demoDuration = 11800;
 
 export default {
   props: {
@@ -186,6 +183,10 @@ export default {
     pointer: null,
     demoTime: 0,
     reduceMotion: false,
+    labelScale: 1,
+    spacingBounds: canvas,
+    chromeBounds: [],
+    swatchTextBounds: [],
     cursorImage: process.env.BASE_URL + "img/v5/probe-crosshair.png",
     swatches,
     gapMarker,
@@ -197,34 +198,59 @@ export default {
     ]
   }),
   computed: {
+    artworkViewBox() {
+      if (this.mode === "palette") return "25 8 590 174";
+      if (this.mode !== "spacing") return "156 0 328 240";
+
+      const { x, y, width, height } = this.spacingBounds;
+      return `${x} ${y} ${width} ${height}`;
+    },
+    gapLabelTransform() {
+      return `translate(${gapCenter - 23 * this.labelScale} ${91 - 20 * this.labelScale}) scale(${this.labelScale})`;
+    },
     autoplaySpacing() {
       return this.mode === "spacing" && this.running && !this.paused && !this.pointer && !this.reduceMotion;
     },
     probePoint() {
       if (this.pointer) return this.pointer;
-      if (!this.autoplaySpacing || this.demoTime >= spacingStops[spacingStops.length - 1].time) return null;
+      if (!this.autoplaySpacing || this.demoTime < demoStops[0].time) return null;
 
-      const nextIndex = spacingStops.findIndex(stop => stop.time > this.demoTime);
-      const from = spacingStops[nextIndex - 1];
-      const to = spacingStops[nextIndex];
-      const fraction = (this.demoTime - from.time) / (to.time - from.time);
-      const eased = (1 - Math.cos(fraction * Math.PI)) / 2;
+      const nextIndex = demoStops.findIndex(stop => stop.time > this.demoTime);
+      if (nextIndex < 0) return null;
+      const from = demoStops[nextIndex - 1];
+      const to = demoStops[nextIndex];
+      const progress = (this.demoTime - from.time) / (to.time - from.time);
+      const eased = (1 - Math.cos(progress * Math.PI)) / 2;
       return {
         x: from.x + (to.x - from.x) * eased,
         y: from.y + (to.y - from.y) * eased
       };
     },
     liveReading() {
-      if (!this.probePoint) return null;
+      const point = this.probePoint;
+      if (!point) return null;
 
-      const { x, y } = this.probePoint;
-      const axis = this.pointer || this.demoTime < 2050 ? "both"
-        : this.demoTime < 3900 ? "horizontal" : "vertical";
-      const contains = shape => x >= shape.x && x <= shape.x + shape.width
-        && y >= shape.y && y <= shape.y + shape.height;
-      const swatch = axis === "both" && swatches.find(contains);
-      const inside = swatch || cards.find(contains);
-      const edges = inside ? probeAt(this.probePoint, [], inside) : probeAt(this.probePoint, cards, canvas);
+      const { x, y } = point;
+      const inGap = y >= cards[0].y && y <= cards[0].y + cards[0].height
+        && cards.slice(0, -1).some((card, index) => x > card.x + card.width && x < cards[index + 1].x);
+      const inBottomSpace = !this.pointer && y > cards[0].y + cards[0].height && y < canvas.height;
+      const axis = inGap ? "horizontal" : inBottomSpace ? "vertical" : "both";
+      const cardIndex = cards.findIndex(card => roundedBoundsAt(point, card));
+      let edges;
+      if (cardIndex < 0) {
+        const chrome = this.chromeBounds.find(bounds => roundedBoundsAt(point, bounds));
+        edges = chrome ? roundedBoundsAt(point, chrome)
+          : probeAt(point, [...cards, ...this.chromeBounds], this.spacingBounds);
+      } else {
+        const swatch = swatches[cardIndex];
+        const card = roundedBoundsAt(point, cards[cardIndex]);
+        const whiteArea = { x: card.left, y: card.top, width: card.right - card.left, height: card.bottom - card.top };
+        const textBounds = this.swatchTextBounds[cardIndex] || [];
+        const text = textBounds.find(bounds => roundedBoundsAt(point, bounds));
+        edges = roundedBoundsAt(point, swatch) || (text
+          ? roundedBoundsAt(point, text)
+          : probeAt(point, [swatch, ...textBounds], whiteArea));
+      }
       const { left, right, top, bottom } = edges;
       const horizontal = axis !== "vertical"
         ? `M${left} ${y}H${right}M${left} ${y - 8}v16M${right} ${y - 8}v16` : "";
@@ -233,44 +259,123 @@ export default {
 
       const label = formatLabel(edges, axis);
       const labelWidth = label.length * 7 + 14;
-      const labelX = x + labelWidth + 16 > canvas.width ? x - labelWidth - 16 : x + 16;
-      const labelY = y > 213 ? y - 37 : y + 16;
+      const width = labelWidth * this.labelScale;
+      const height = 20 * this.labelScale;
+      const minMargin = 4;
+      const labelX = inGap ? (left + right - width) / 2
+        : x + width + 16 > canvas.width ? x - width - 16 : x + 16;
+      const above = y - height - (inGap ? 9 : 12);
+      const below = y + 12;
+      // Keep the capsule away from the names and hex codes under the swatches.
+      const clearsNames = origin => origin + height <= 140 || origin >= 170;
+      const minY = this.spacingBounds.y + minMargin;
+      const maxY = this.spacingBounds.y + this.spacingBounds.height - minMargin;
+      const fits = origin => origin >= minY && origin + height <= maxY;
+      const leftEdge = clamp(labelX, minMargin, canvas.width - width - minMargin);
+      const clearsChrome = origin => this.chromeBounds.every(bounds =>
+        leftEdge + width <= bounds.x || leftEdge >= bounds.x + bounds.width
+        || origin + height <= bounds.y || origin >= bounds.y + bounds.height
+      );
+      const preferred = inGap ? [above, below] : [below, above];
+      const labelY = preferred.find(origin => fits(origin) && clearsNames(origin) && clearsChrome(origin));
+      const topEdge = labelY === undefined ? 140 - height : labelY;
 
       return {
         lines: horizontal + vertical,
-        labelX: clamp(labelX, 4, canvas.width - labelWidth - 4),
-        labelY: clamp(labelY, 4, 239),
+        labelTransform: `translate(${leftEdge} ${topEdge}) scale(${this.labelScale})`,
         labelWidth,
         label
       };
     }
   },
   watch: {
+    label() {
+      if (this.spacingPanel) this.$nextTick(this.updateSpacingLayout);
+    },
+    paused() {
+      if (this.spacingPanel) this.$nextTick(this.updateChromeBounds);
+    },
     autoplaySpacing(playing) {
-      if (!playing) {
-        cancelAnimationFrame(this.spacingFrame);
-        this.demoTime = 0;
-        return;
-      }
+      cancelAnimationFrame(this.spacingFrame);
+      this.demoTime = 0;
+      if (!playing) return;
 
       let start;
       const animate = timestamp => {
         if (start === undefined) start = timestamp;
-        this.demoTime = (timestamp - start) % spacingDuration;
+        this.demoTime = (timestamp - start) % demoDuration;
         this.spacingFrame = requestAnimationFrame(animate);
       };
       this.spacingFrame = requestAnimationFrame(animate);
     }
   },
   methods: {
-    showPin(time) {
-      return !this.autoplaySpacing || this.demoTime >= time;
+    updateTextBounds() {
+      this.swatchTextBounds = this.$refs.swatchCards.map((card, index) => {
+        const swatch = this.swatches[index];
+        return Array.from(card.querySelectorAll("text"), text => {
+          const bounds = text.getBBox();
+          return {
+            x: swatch.x + bounds.x,
+            y: swatch.y + bounds.y,
+            width: bounds.width,
+            height: bounds.height,
+            radius: 0
+          };
+        });
+      });
+    },
+    updateSpacingLayout() {
+      const { width, height } = this.$el.getBoundingClientRect();
+      if (width <= 0) return;
+
+      this.labelScale = canvas.width / width;
+      this.spacingBounds = {
+        ...canvas,
+        y: -this.spacingStage.offsetTop * this.labelScale,
+        height: height * this.labelScale
+      };
+      this.$nextTick(this.updateChromeBounds);
+    },
+    updateChromeBounds() {
+      if (!this.$el.isConnected) return;
+      const matrix = this.$el.getScreenCTM();
+      if (!matrix) return;
+
+      const inverse = matrix.inverse();
+      const range = document.createRange();
+      const nodes = this.spacingPanel.querySelectorAll(".pm-probe-heading h3, .pm-probe-heading span, .pm-motion-toggle");
+      const textAndControls = Array.from(nodes).flatMap(node => {
+        range.selectNodeContents(node);
+        const rects = node.tagName === "BUTTON" ? node.getClientRects() : range.getClientRects();
+        return Array.from(rects, rect => {
+          const { x, y } = new DOMPoint(rect.left, rect.top).matrixTransform(inverse);
+          return { x, y, width: rect.width * this.labelScale, height: rect.height * this.labelScale, radius: 0 };
+        }).filter(rect => rect.width > 0 && rect.height > 0);
+      });
+      const dividerHeight = parseFloat(getComputedStyle(this.spacingPanel.querySelector(".pm-probe-footer")).borderTopWidth);
+      this.chromeBounds = dividerHeight > 0
+        ? [...textAndControls, { x: 0, y: canvas.height, width: canvas.width, height: dividerHeight * this.labelScale, radius: 0 }]
+        : textAndControls;
+    },
+    clearProbe() {
+      this.pointer = null;
     },
     updateMotionPreference(event) {
       this.reduceMotion = event.matches;
     },
     moveProbe(event) {
-      if (this.mode !== "spacing" || event.pointerType !== "mouse") return;
+      if (event.pointerType === "mouse") this.updateProbe(event);
+    },
+    tapProbe(event) {
+      if (event.pointerType !== "mouse") this.updateProbe(event);
+    },
+    leaveProbe(event) {
+      if (event.pointerType === "mouse") this.pointer = null;
+    },
+    updateProbe(event) {
+      if (this.mode !== "spacing") return;
+
       const matrix = this.$el.getScreenCTM();
       if (!matrix) return;
 
@@ -278,11 +383,38 @@ export default {
       point.x = event.clientX;
       point.y = event.clientY;
       const { x, y } = point.matrixTransform(matrix.inverse());
-      this.pointer = { x: clamp(x, 0, canvas.width), y: clamp(y, 0, canvas.height) };
+      const bounds = this.spacingBounds;
+      this.pointer = { x: clamp(x, 0, bounds.width), y: clamp(y, bounds.y, bounds.y + bounds.height) };
     }
   },
   mounted() {
+    if (this.mode === "palette") return;
     if (this.mode === "spacing") {
+      this.spacingPanel = this.$el.parentElement;
+      this.spacingStage = this.spacingPanel.querySelector(".pm-probe-stage");
+      this.pointerHandlers = {
+        pointerenter: this.moveProbe,
+        pointermove: this.moveProbe,
+        pointerup: this.tapProbe,
+        pointerleave: this.leaveProbe,
+        pointercancel: this.clearProbe
+      };
+      Object.entries(this.pointerHandlers).forEach(([event, handler]) => this.spacingPanel.addEventListener(event, handler));
+      this.updateSpacingLayout();
+      this.updateTextBounds();
+      if (document.fonts) {
+        document.fonts.ready.then(() => {
+          if (this.$el.isConnected) {
+            this.updateTextBounds();
+            this.updateSpacingLayout();
+          }
+        });
+      }
+      if (window.ResizeObserver) {
+        this.labelObserver = new ResizeObserver(this.updateSpacingLayout);
+        this.labelObserver.observe(this.spacingPanel);
+        this.labelObserver.observe(this.spacingStage);
+      }
       this.motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
       this.updateMotionPreference(this.motionPreference);
       this.motionPreference.addEventListener("change", this.updateMotionPreference);
@@ -300,6 +432,10 @@ export default {
   },
   beforeDestroy() {
     if (this.observer) this.observer.disconnect();
+    if (this.labelObserver) this.labelObserver.disconnect();
+    if (this.spacingPanel) {
+      Object.entries(this.pointerHandlers).forEach(([event, handler]) => this.spacingPanel.removeEventListener(event, handler));
+    }
     if (this.motionPreference) {
       this.motionPreference.removeEventListener("change", this.updateMotionPreference);
       cancelAnimationFrame(this.spacingFrame);

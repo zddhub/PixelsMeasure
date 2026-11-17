@@ -1,5 +1,5 @@
 <template>
-  <header class="pm-header" :class="{ 'pm-header-home': $route.name === 'homepage' || $route.name === 'others' }">
+  <header class="pm-header">
     <div class="pm-wrap pm-header-inner">
       <router-link class="pm-brand" to="/">
         <img :src="imageBase + 'app-icon.png'" alt="" width="32" height="32">

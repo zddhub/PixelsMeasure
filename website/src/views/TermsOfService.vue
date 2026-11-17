@@ -1,11 +1,6 @@
 <template>
-    <section class="my-0">
-        <div class="container shape-container d-flex align-items-left">
-            <div class="col px-0">
-                <div class="row justify-content-center align-items-left">
-                    <div class="col-lg-12 text-left pt-lg">
-                        <br/>
-        <vue-markdown>
+  <article class="pm-wrap pm-legal">
+    <vue-markdown>
 # PixelsMeasure Terms of Service
 
 Last updated November 17, 2026
@@ -43,10 +38,8 @@ We will post updates to these terms on this page and revise the date above.
 ## Privacy and contact
 
 See the [PixelsMeasure Privacy Policy](https://pixelsmeasure.com/#/privacy) for how the app handles information. If you have questions about these terms, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).
-        </vue-markdown>
-        </div></div></div>
-    </div>
-    </section>
+    </vue-markdown>
+  </article>
 </template>
 <script>
 import VueMarkdown from 'vue-markdown';

@@ -9,6 +9,15 @@ function scanSpan(coordinate, crossStart, crossSize, start, size, radius) {
   return [start + inset, start + size - inset];
 }
 
+export function roundedBoundsAt({x, y}, shape) {
+  const horizontal = scanSpan(y, shape.y, shape.height, shape.x, shape.width, shape.radius);
+  if (!horizontal || x < horizontal[0] || x > horizontal[1]) return null;
+
+  const [left, right] = horizontal;
+  const [top, bottom] = scanSpan(x, shape.x, shape.width, shape.y, shape.height, shape.radius);
+  return {left, right, top, bottom};
+}
+
 export function probeAt({x, y}, shapes, border) {
   let left = border.x;
   let right = border.x + border.width;

@@ -6,49 +6,70 @@ export const landingCopy = {
     nav: ["Workflow", "Tools", "Download"],
     language: "Language",
     store: "Download on the App Store",
-    watchPreview: "Watch the preview",
-    previewTitle: "PixelsMeasure App Store Preview",
+    watchPreview: "See how it works",
+    previewTitle: "PixelsMeasure demo",
     closePreview: "Close preview",
-    previewDescription: "A 30-second demonstration of measuring spacing and objects, snapping guides, and opening live measurements as a document.",
+    previewDescription: "A short demonstration of measuring spacing and objects and snapping guides.",
     hero: ["Measure what you see.", "To the pixel."],
-    intro: "Measure your Mac screen live, or open an image as an editable measurement document on Mac, iPhone, and iPad.",
-    spacingAlt: "Mint, Bubblegum, and Peach swatches with measurements for a 162 by 94 pixel swatch and an 18 pixel gap between the card borders.",
+    intro: "Check sizes, spacing, and alignment in screenshots and photos.",
+    platformNote: "For Mac, iPhone, and iPad",
+    freeNote: "Free to download",
+    proLink: "Compare Free and Pro",
+    tryProbe: "Try the spacing probe",
+    spacingAlt: "Mint, Bubblegum, and Peach swatches with an 18-pixel gap marked between the first two cards.",
     tools: "Measure the details.",
     toolsIntro: "Inspect the edges, alignment, and low-contrast details that are easy to miss by eye.",
     tolerance: "Tolerance",
     probeHint: "Move the pointer to measure",
+    probeTouchHint: "Tap a swatch or gap to measure",
     pauseMotion: "Pause demos",
     resumeMotion: "Play demos",
     measurements: [
-      { mode: "object", title: "Find an object’s edges.", body: "Draw around an icon or element to measure its visible bounds.", alt: "A red bounding box measures a paper plane at 156 by 110 pixels." },
-      { mode: "guides", title: "Snap guides to edges.", body: "Line up guides with the edges of your design and read the distance between them.", alt: "Two blue guides snap to the cover edges, 216 pixels apart." },
-      { mode: "cross", title: "Check alignment with Cross.", body: "Compare two axes at once and read the pointer coordinates to spot controls that are a few pixels off.", alt: "Crosshair lines through the Card option reveal a five-pixel offset in neighboring controls." },
-      { mode: "tolerance", title: "Find the edge you need.", body: "Adjust detection sensitivity to look past shadows and low-contrast seams.", alt: "Changing tolerance from 8 to 32 moves the probe from a 336-pixel seam to the outer 480-pixel edge." }
+      { mode: "object", title: "Object detection", body: "Draw around an icon or element to measure its visible bounds.", alt: "A red bounding box measures a paper plane at 156 by 110 pixels." },
+      { mode: "guides", title: "Guide snapping", body: "Line up guides with the edges of your design and read the distance between them.", alt: "Two blue guides snap to the cover edges, 216 pixels apart." },
+      { mode: "cross", title: "Cross", body: "Compare two axes at once and read the pointer coordinates to spot controls that are a few pixels off.", alt: "Crosshair lines through the Card option reveal a five-pixel offset in neighboring controls." },
+      { mode: "tolerance", title: "Edge detection tolerance", body: "Adjust detection sensitivity to look past shadows and low-contrast seams.", alt: "Changing tolerance from 8 to 32 moves the probe from a 336-pixel seam to the outer 480-pixel edge." }
     ],
-    workflow: "Two ways to start measuring.",
+    workflow: "From a screenshot to an annotated PNG.",
+    workflowSteps: [
+      {
+        title: "Open a screenshot",
+        body: "Bring a screenshot, photo, or mockup into PixelsMeasure on any supported device.",
+        alt: "An unmarked image of the Mint, Bubblegum, and Peach palette."
+      },
+      {
+        title: "Pin what you measure",
+        body: "Mark dimensions and gaps. Save the editable document to keep refining your measurements.",
+        image: "workflow-iphone.jpg", width: 344, height: 332,
+        alt: "The PixelsMeasure document toolbar and a pinned measurement over the Mint swatch on iPhone."
+      },
+      {
+        title: "Share an annotated PNG",
+        body: "Export the image with its measurements so everyone can see exactly what you checked.",
+        image: "palette-annotated.jpg", width: 946, height: 414,
+        alt: "A detail of the palette with the swatch size and gaps marked in red."
+      }
+    ],
+    workflowExtra: "Keep a layered .pixelsmeasure document for later, or copy values as CSS, JSON, or plain text.",
     live: {
-      title: "Measure right on your Mac.",
-      body: "Start from the menu bar and pin the gaps and dimensions you need. Choose Open as Document to keep your measurements and refine them with layers and the inspector.",
-      permission: "Live screen measurement uses macOS Screen Recording permission.",
-      alt: "Mac measurement document with pinned dimensions, layers, and an inspector."
+      title: "Measure the live screen on Mac.",
+      body: "Start from the menu bar. Pin what you find, then choose Open as Document to keep working with the captured image and measurements.",
+      permission: "Live measurement uses macOS Screen Recording permission.",
+      alt: "The PixelsMeasure menu in the Mac menu bar, with Start Measure highlighted."
     },
-    image: {
-      title: "Open an image. Start measuring.",
-      body: "Open a screenshot, photo, or mockup as an editable document. Zoom down to the pixel grid, export an annotated PNG, or save a .pixelsmeasure file in iCloud Drive to continue on another device.",
-      alt: "PixelsMeasure on iPhone measuring a weather card and the gap between forecast tiles."
-    },
-    handoff: {
-      title: "From measurements to handoff.",
-      intro: "Keep the original image, the measurements, and the context together in one document.",
-      features: [
-        ["Layers and inspector", "Group, hide, and lock pins in layers. Set exact positions and sizes in the inspector, or zoom in to the pixel grid."],
-        ["Copy for development", "Measure in pixels, points, em, rem, or aspect ratio. Copy values as CSS, JSON, or plain text."],
-        ["Share a document or PNG", "Send an editable .pixelsmeasure file or export an annotated PNG for a design review or bug report."]
-      ]
-    },
+    planScope: "Per document or live session",
     plans: [
-      ["Free", "Measure with Probe and Cross, save and share documents, and add up to three measurements per document or live session."],
-      ["Pro", "Add unlimited measurements, detect object bounds, snap guides, batch copy, crop, and rotate. Try Pro tools in the sample document."]
+      {
+        name: "Free",
+        limit: "Up to 3 measurements",
+        features: ["Probe and Cross", "Save and share documents"]
+      },
+      {
+        name: "Pro",
+        limit: "Unlimited measurements",
+        features: ["Object detection and guide snapping", "Batch copy, crop, and rotate"],
+        note: "Try Pro tools in the sample document."
+      }
     ],
     download: "Download PixelsMeasure.",
     requirements: "For macOS 14, iOS 17, and iPadOS 17 or later.",
@@ -58,49 +79,70 @@ export const landingCopy = {
     nav: ["操作流程", "测量工具", "下载"],
     language: "语言",
     store: "在 App Store 下载",
-    watchPreview: "观看产品预览",
-    previewTitle: "PixelsMeasure App Store 预览",
+    watchPreview: "查看实际操作",
+    previewTitle: "PixelsMeasure 产品演示",
     closePreview: "关闭预览",
-    previewDescription: "30 秒演示，展示间距和对象测量、参考线吸附，以及将实时测量打开为文档。",
+    previewDescription: "简短演示，展示间距测量、对象边界检测和参考线吸附。",
     hero: ["所见皆可测。", "精确到像素。"],
-    intro: "在 Mac 上实时测量屏幕，或在 Mac、iPhone 和 iPad 上直接打开图片，创建可编辑的测量文档。",
-    spacingAlt: "彩色样卡的测量示例，标出 162 × 94 像素的尺寸和 卡片外框之间 18 像素的间距。",
+    intro: "精确检查截图和照片里的尺寸、间距与对齐。",
+    platformNote: "适用于 Mac、iPhone 和 iPad",
+    freeNote: "免费下载",
+    proLink: "对比免费版与 Pro",
+    tryProbe: "试试间距探针",
+    spacingAlt: "彩色样卡的测量示例，标出前两张卡片之间 18 像素的间距。",
     tools: "测量每一处细节。",
     toolsIntro: "检查容易被肉眼忽略的边界、对齐和低对比度细节。",
     tolerance: "容差",
     probeHint: "移动指针即可测量",
+    probeTouchHint: "轻点色块或间隙即可测量",
     pauseMotion: "暂停演示",
     resumeMotion: "播放演示",
     measurements: [
-      { mode: "object", title: "找到对象的边界。", body: "框选图标或元素，测量可见边界的尺寸。", alt: "红色选框标出纸飞机的尺寸为 156 × 110 像素。" },
-      { mode: "guides", title: "让参考线吸附到边缘。", body: "将参考线对齐到设计稿的边缘，直接读取两条线之间的距离。", alt: "两条蓝色参考线吸附到封面两侧，间距为 216 像素。" },
-      { mode: "cross", title: "用十字准线检查对齐。", body: "同时检查水平和垂直对齐，并读取指针坐标，发现相差几个像素的控件。", alt: "十字准线穿过 Card 选项，显示附近控件相差 5 像素。" },
-      { mode: "tolerance", title: "找到需要的边界。", body: "调整边缘检测容差，让测量跨过阴影或低对比度的分隔线。", alt: "容差从 8 调到 32 后，探针从 336 像素的分隔线移至 480 像素的外边界。" }
+      { mode: "object", title: "对象边界检测", body: "框选图标或元素，测量可见边界的尺寸。", alt: "红色选框标出纸飞机的尺寸为 156 × 110 像素。" },
+      { mode: "guides", title: "参考线吸附", body: "将参考线对齐到设计稿的边缘，直接读取两条线之间的距离。", alt: "两条蓝色参考线吸附到封面两侧，间距为 216 像素。" },
+      { mode: "cross", title: "十字准线", body: "同时检查水平和垂直对齐，并读取指针坐标，发现相差几个像素的控件。", alt: "十字准线穿过 Card 选项，显示附近控件相差 5 像素。" },
+      { mode: "tolerance", title: "边缘检测容差", body: "调整边缘检测容差，让测量跨过阴影或低对比度的分隔线。", alt: "容差从 8 调到 32 后，探针从 336 像素的分隔线移至 480 像素的外边界。" }
     ],
-    workflow: "两种方式开始测量。",
+    workflow: "从截图到带标注的 PNG。",
+    workflowSteps: [
+      {
+        title: "打开截图",
+        body: "在 Mac、iPhone 或 iPad 上打开截图、照片或设计稿。",
+        alt: "未加标注的调色板，包含薄荷绿、粉色和蜜桃色三张色卡。"
+      },
+      {
+        title: "固定测量结果",
+        body: "把尺寸和间距标在图上，保存为可编辑文档，方便随时继续测量。",
+        image: "workflow-iphone.jpg", width: 344, height: 332,
+        alt: "iPhone 上的 PixelsMeasure 文档工具栏，及固定在薄荷绿色块上的测量标注。"
+      },
+      {
+        title: "分享带标注的 PNG",
+        body: "将原图和测量结果一起导出，让团队看清你检查的位置和数值。",
+        image: "palette-annotated.jpg", width: 946, height: 414,
+        alt: "调色板的标注细节，以红色显示色块尺寸和间距。"
+      }
+    ],
+    workflowExtra: "将原图和标注保存为可编辑的 .pixelsmeasure 文档，也可以将读数复制为 CSS、JSON 或纯文本。",
     live: {
-      title: "直接测量 Mac 屏幕。",
-      body: "从菜单栏开始测量，固定需要的间距和尺寸。选择「打开为文档」保留测量，再用图层和检查器继续编辑。",
+      title: "在 Mac 上实时测量屏幕。",
+      body: "从菜单栏开始，固定所需的读数。选择「打开为文档」，就能继续编辑捕获的图像和测量结果。",
       permission: "实时测量需要 macOS 屏幕录制权限。",
-      alt: "Mac 上的测量文档，显示已固定的尺寸、图层和检查器。"
+      alt: "Mac 菜单栏中的 PixelsMeasure 菜单，突出显示开始测量选项。"
     },
-    image: {
-      title: "打开图片，立即测量。",
-      body: "直接打开截图、照片或设计稿，放大到像素网格。可导出带标注的 PNG，或将 .pixelsmeasure 文件存入 iCloud 云盘，在另一台设备继续编辑。",
-      alt: "iPhone 上的 PixelsMeasure 正在测量天气卡片及预报卡片之间的间距。"
-    },
-    handoff: {
-      title: "从测量到交付。",
-      intro: "在一份可编辑文档中保留原图和测量结果。",
-      features: [
-        ["图层与检查器", "将测量分组、隐藏或锁定。在检查器中输入精确的位置和尺寸，也可以放大查看像素网格。"],
-        ["复制给开发使用", "支持像素、点、em、rem 和宽高比，并可将数值复制为 CSS、JSON 或纯文本。"],
-        ["分享文档或 PNG", "发送可编辑的 .pixelsmeasure 文件，也可导出带标注的 PNG，用于设计评审或问题报告。"]
-      ]
-    },
+    planScope: "每份文档或每次实时会话",
     plans: [
-      ["免费版", "使用探针和十字准线，保存或分享文档，每份文档或每次实时测量最多新增三条测量。"],
-      ["Pro", "不限测量数量，支持对象边界检测、参考线吸附、批量复制、裁剪和旋转。可在随附的示例文档中体验。"]
+      {
+        name: "免费版",
+        limit: "最多 3 条测量",
+        features: ["探针和十字准线", "保存与分享文档"]
+      },
+      {
+        name: "Pro",
+        limit: "不限测量数量",
+        features: ["对象边界检测与参考线吸附", "批量复制、裁剪和旋转"],
+        note: "可在 App 内的示例文档中体验 Pro 工具。"
+      }
     ],
     download: "下载 PixelsMeasure。",
     requirements: "适用于 macOS 14、iOS 17、iPadOS 17 或更高版本。",
