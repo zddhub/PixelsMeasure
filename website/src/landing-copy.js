@@ -62,12 +62,12 @@ export const landingCopy = {
     plans: [
       {
         name: "Free",
-        limit: "Up to 3 measurements",
-        features: ["Probe and Cross", "Save and share documents"]
+        limit: "Pin up to 3 measurements",
+        features: ["Keep measuring with Probe and Cross after reaching the pin limit", "Save and share documents"]
       },
       {
         name: "Pro",
-        limit: "Unlimited measurements",
+        limit: "Pin unlimited measurements",
         features: ["Object detection and guide snapping", "Batch copy, crop, and rotate"],
         note: "Try Pro tools in the sample document."
       }
@@ -136,12 +136,12 @@ export const landingCopy = {
     plans: [
       {
         name: "免费版",
-        limit: "最多 3 条测量",
-        features: ["探针和十字准线", "保存与分享文档"]
+        limit: "最多固定 3 条测量结果",
+        features: ["达到固定上限后，仍可用探针和十字准线测量", "保存与分享文档"]
       },
       {
         name: "Pro",
-        limit: "不限测量数量",
+        limit: "固定测量结果数量不限",
         features: ["对象边界检测与参考线吸附", "批量复制、裁剪和旋转"],
         note: "可在 App 内的示例文档中体验 Pro 工具。"
       }
