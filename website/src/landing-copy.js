@@ -35,19 +35,20 @@ export const landingCopy = {
       {
         title: "Open a screenshot",
         body: "Bring a screenshot, photo, or mockup into PixelsMeasure on any supported device.",
-        alt: "An unmarked image of the Mint, Bubblegum, and Peach palette."
+        image: "workflow-workshop.png", width: 720, height: 424,
+        alt: "An unmarked mockup of a typography workshop signup page."
       },
       {
         title: "Pin what you measure",
         body: "Mark dimensions and gaps. Save the editable document to keep refining your measurements.",
-        image: "workflow-iphone.jpg", width: 344, height: 332,
-        alt: "The PixelsMeasure document toolbar and a pinned measurement over the Mint swatch on iPhone."
+        image: "workflow-workshop-measure.png", width: 720, height: 488,
+        alt: "A pin icon identifies two saved measurements on the workshop mockup."
       },
       {
         title: "Share an annotated PNG",
-        body: "Export the image with its measurements so everyone can see exactly what you checked.",
-        image: "palette-annotated.jpg", width: 946, height: 414,
-        alt: "A detail of the palette with the swatch size and gaps marked in red."
+        body: "Export the image with your measurements. Here, the signup button is 240 × 56 px and the gap above the type specimen is 26 px.",
+        image: "workflow-workshop-annotated.png", width: 720, height: 488,
+        alt: "A share preview of workshop-annotated.png with both measurements visible."
       }
     ],
     workflowExtra: ["Keep a layered ", " document for later, or copy values as CSS, JSON, or plain text."],
@@ -108,19 +109,20 @@ export const landingCopy = {
       {
         title: "打开截图",
         body: "在 Mac、iPhone 或 iPad 上打开截图、照片或设计稿。",
-        alt: "未加标注的调色板，包含薄荷绿、粉色和蜜桃色三张色卡。"
+        image: "workflow-workshop.png", width: 720, height: 424,
+        alt: "尚未添加测量标注的字体工作坊报名页设计稿。"
       },
       {
         title: "固定测量结果",
         body: "把尺寸和间距标在图上，保存为可编辑文档，方便随时继续测量。",
-        image: "workflow-iphone.jpg", width: 344, height: 332,
-        alt: "iPhone 上的 PixelsMeasure 文档工具栏，及固定在薄荷绿色块上的测量标注。"
+        image: "workflow-workshop-measure.png", width: 720, height: 488,
+        alt: "图钉图标表示工作坊设计稿上的两处测量已固定。"
       },
       {
         title: "分享带标注的 PNG",
-        body: "将原图和测量结果一起导出，让团队看清你检查的位置和数值。",
-        image: "palette-annotated.jpg", width: 946, height: 414,
-        alt: "调色板的标注细节，以红色显示色块尺寸和间距。"
+        body: "将原图和测量结果一起导出。图中报名按钮为 240 × 56 px，字体样张上方的间距为 26 px。",
+        image: "workflow-workshop-annotated.png", width: 720, height: 488,
+        alt: "分享预览中的 workshop-annotated.png，保留了两处测量标注。"
       }
     ],
     workflowExtra: ["将原图和标注保存为可编辑的 ", " 文档，也可以将读数复制为 CSS、JSON 或纯文本。"],

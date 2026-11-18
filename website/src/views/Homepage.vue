@@ -45,8 +45,7 @@
       <ol class="pm-workflow-grid">
         <li v-for="(step, index) in copy.workflowSteps" :key="step.title">
           <div class="pm-workflow-art">
-            <img v-if="step.image" :src="imageBase + step.image" :alt="step.alt" :width="step.width" :height="step.height" loading="lazy">
-            <measurement-artwork v-else mode="palette" :label="step.alt"/>
+            <img :src="imageBase + step.image" :alt="step.alt" :width="step.width" :height="step.height" loading="lazy">
           </div>
           <div class="pm-step">
             <span class="pm-step-number" aria-hidden="true">{{ index + 1 }}</span>

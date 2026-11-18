@@ -3,7 +3,7 @@
     :class="{ 'pm-demo-running': running && !paused && !pointer, 'pm-demo-live': pointer }"
     :viewBox="artworkViewBox"
     role="img" :aria-label="label">
-    <g v-if="mode === 'spacing' || mode === 'palette'">
+    <g v-if="mode === 'spacing'">
       <g v-for="swatch in swatches" :key="swatch.name" ref="swatchCards"
         :transform="'translate(' + swatch.x + ' ' + swatch.y + ')'">
         <rect x="-6" y="-6" width="174" height="150" rx="16" fill="#fff" stroke="#e5e9f2"/>
@@ -11,7 +11,7 @@
         <text x="3" :y="swatchNameBaseline" :style="{ fontSize: swatchNameSize + 'px' }" class="pm-canvas-name">{{ swatch.name }}</text>
         <text x="3" :y="swatchHexBaseline" :style="{ fontSize: swatchHexSize + 'px' }" class="pm-canvas-meta">{{ swatch.color }}</text>
       </g>
-      <g v-if="mode === 'spacing' && !probePoint">
+      <g v-if="!probePoint">
         <path class="pm-red-line" :d="gapMarker.path" fill="none"/>
         <g class="pm-red-tag" :transform="gapLabelTransform">
           <rect width="46" height="20" rx="10"/>
@@ -199,7 +199,6 @@ export default {
   }),
   computed: {
     artworkViewBox() {
-      if (this.mode === "palette") return "25 8 590 174";
       if (this.mode !== "spacing") return "156 0 328 240";
 
       const { x, y, width, height } = this.spacingBounds;
@@ -412,7 +411,6 @@ export default {
     }
   },
   mounted() {
-    if (this.mode === "palette") return;
     if (this.mode === "spacing") {
       this.spacingPanel = this.$el.parentElement;
       this.spacingStage = this.spacingPanel.querySelector(".pm-probe-stage");
