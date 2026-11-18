@@ -10,8 +10,6 @@
 
 **Requires macOS 14, iOS 17, or iPadOS 17 or later.** Free to download, with optional Pro purchases.
 
-The [App Store][app-store] currently offers **4.6.0**. The document workflow and Free and Pro comparison below describe **PixelsMeasure 5.0**, the upcoming release.
-
 ## What's new in 5.0
 
 On Mac, measure your screen with **Live Measure** from the menu bar. Use Probe to read gaps between edges and Cross to check alignment and pointer coordinates. Pin the measurements you want to keep, then choose **Open as Document** to continue editing them with the captured image. Live Measure requires macOS Screen Recording permission; measuring an image does not.
