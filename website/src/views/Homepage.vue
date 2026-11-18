@@ -7,8 +7,8 @@
           <p>{{ copy.intro }}</p>
           <p class="pm-platform-note">{{ copy.platformNote }}</p>
           <div class="pm-hero-actions">
-            <a class="pm-store" :href="storeURL" :aria-label="copy.store">
-              <img :src="storeBadge" alt="" width="155" height="52">
+            <a class="pm-store" :href="storeURL">
+              {{ copy.store }}
             </a>
             <button class="pm-preview-button" type="button" aria-haspopup="dialog" @click="openPreview">
               <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
@@ -89,8 +89,8 @@
           <h2 id="pm-download-title">{{ copy.download }}</h2>
           <p>{{ copy.requirements }}</p>
         </div>
-        <a class="pm-store pm-download-store" :href="storeURL" :aria-label="copy.store">
-          <img :src="storeBadge" alt="" width="155" height="52">
+        <a class="pm-store pm-download-store" :href="storeURL">
+          {{ copy.store }}
         </a>
         <dl class="pm-plans">
           <div v-for="plan in copy.plans" :key="plan.name">
@@ -136,8 +136,7 @@ export default {
     animationsPaused: false,
     previewOpen: false,
     imageBase,
-    storeURL,
-    storeBadge: process.env.BASE_URL + "img/download-on-app-store-badge.svg"
+    storeURL
   }),
   computed: {
     copy() {

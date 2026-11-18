@@ -114,9 +114,21 @@
   text-wrap: pretty;
 }
 
-.pm-store { display: inline-flex; flex: none; border-radius: 8px; }
-.pm-store img { display: block; height: auto; }
-.pm-store:hover { opacity: .83; }
+.pm-store {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--pm-action-height, 48px);
+  max-width: 100%;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: var(--pm-ink);
+  color: #fff;
+  font-size: .9375rem;
+  font-weight: 650;
+  text-align: center;
+}
+.pm-store:hover { color: #fff; opacity: .83; }
 
 .pm-hero-actions {
   --pm-action-height: 48px;
@@ -126,8 +138,6 @@
   flex-wrap: wrap;
   gap: 10px;
 }
-
-.pm-hero-actions .pm-store img { width: auto; height: var(--pm-action-height); }
 
 .pm-hero .pm-platform-note { margin-top: -8px; margin-bottom: 26px; font-size: .9375rem; }
 .pm-free-note a { color: var(--pm-blue); text-decoration: underline; }
@@ -420,6 +430,8 @@
 
 .pm-step p, .pm-live-workflow p, .pm-measurement p { margin-bottom: 0; font-size: .9375rem; }
 
+.pm-measurement h3 { overflow-wrap: anywhere; }
+
 .pm-measurement svg { width: 100%; height: clamp(130px, 16vw, 208px); }
 
 .pm-download {
@@ -487,16 +499,19 @@
   .pm-measurement svg { height: clamp(160px, 22vw, 210px); }
 }
 
+@media (max-width: 760px) {
+  .pm-header-inner { grid-template-columns: 1fr auto; gap: 3px 12px; padding-block: 10px 5px; }
+  .pm-brand { font-size: 1.125rem; }
+  .pm-nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 12px; }
+  .pm-language { grid-column: 2; grid-row: 1; }
+}
+
 @media (max-width: 670px) {
   .pm-hero, .pm-tools, .pm-download {
     --pm-grid-line: #3979c50a;
     --pm-grid-size: 24px;
   }
 
-  .pm-header-inner { grid-template-columns: 1fr auto; gap: 3px 12px; padding-block: 10px 5px; }
-  .pm-brand { font-size: 1.125rem; }
-  .pm-nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; gap: 12px; }
-  .pm-language { grid-column: 2; grid-row: 1; }
   .pm-hero-actions { --pm-action-height: 44px; }
   .pm-probe { border-radius: 13px; }
   .pm-workflow-grid, .pm-tools-grid, .pm-download-inner { grid-template-columns: 1fr; }
@@ -517,4 +532,10 @@
 
 @media (max-width: 480px) {
   .pm-plans { grid-template-columns: 1fr; gap: 15px; }
+}
+
+@media (max-width: 390px) {
+  .pm-header-inner { grid-template-columns: minmax(0, 1fr); }
+  .pm-language { grid-column: 1; grid-row: 2; justify-self: start; padding-inline-start: 0; border-left: 0; }
+  .pm-nav { grid-row: 3; }
 }

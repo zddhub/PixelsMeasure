@@ -1,5 +1,5 @@
 <template>
-  <article class="pm-wrap pm-legal">
+  <article class="pm-wrap pm-legal" lang="en-US">
     <vue-markdown>
 # PixelsMeasure Privacy Policy
 

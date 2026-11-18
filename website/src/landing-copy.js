@@ -1,10 +1,23 @@
+import traditionalChinese from "./locales/zh-Hant";
+import french from "./locales/fr-FR";
+import german from "./locales/de-DE";
+import italian from "./locales/it";
+import japanese from "./locales/ja";
+import korean from "./locales/ko";
+import russian from "./locales/ru";
+import mexicanSpanish from "./locales/es-MX";
+
 export const storeURL = "https://apps.apple.com/app/pixelsmeasure/id1638740542";
 export const imageBase = process.env.BASE_URL + "img/v5/";
 
 export const landingCopy = {
-  en: {
+  "en-US": {
     nav: ["Workflow", "Tools", "Download"],
-    language: "Language",
+    language: "Site language",
+    siteNav: "Site navigation",
+    footerNav: "Footer navigation",
+    englishOnly: "English",
+    pageTitle: "Pixel measurements for Mac, iPhone, and iPad",
     store: "Download on the App Store",
     watchPreview: "See how it works",
     previewTitle: "PixelsMeasure demo",
@@ -76,9 +89,13 @@ export const landingCopy = {
     requirements: "For macOS 14, iOS 17, and iPadOS 17 or later.",
     footer: ["Privacy", "Terms of Service", "Contact", "GitHub", "Blog"]
   },
-  cn: {
+  "zh-Hans": {
     nav: ["操作流程", "测量工具", "下载"],
-    language: "语言",
+    language: "网站语言",
+    siteNav: "网站导航",
+    footerNav: "页脚导航",
+    englishOnly: "英文",
+    pageTitle: "适用于 Mac、iPhone 和 iPad 的像素测量工具",
     store: "在 App Store 下载",
     watchPreview: "查看实际操作",
     previewTitle: "PixelsMeasure 产品演示",
@@ -92,7 +109,7 @@ export const landingCopy = {
     tryProbe: "试试间距探针",
     spacingAlt: "彩色样卡的测量示例，标出前两张卡片之间 18 像素的间距。",
     tools: "测量每一处细节。",
-    toolsIntro: "检查容易被肉眼忽略的边界、对齐和低对比度细节。",
+    toolsIntro: "找出肉眼不易察觉的边界、对齐偏差和低对比度细节。",
     tolerance: "容差",
     probeHint: "移动指针即可测量",
     probeTouchHint: "轻点色块或间隙即可测量",
@@ -149,9 +166,19 @@ export const landingCopy = {
     download: "下载 PixelsMeasure。",
     requirements: "适用于 macOS 14、iOS 17、iPadOS 17 或更高版本。",
     footer: ["隐私政策", "服务条款", "联系", "GitHub", "博客"]
-  }
+  },
+  "zh-Hant": traditionalChinese,
+  "fr-FR": french,
+  "de-DE": german,
+  it: italian,
+  ja: japanese,
+  ko: korean,
+  ru: russian,
+  "es-MX": mexicanSpanish
 };
 
 export function copyFor(locale) {
-  return landingCopy[locale] || landingCopy.en;
+  return Object.prototype.hasOwnProperty.call(landingCopy, locale)
+    ? landingCopy[locale]
+    : landingCopy["en-US"];
 }

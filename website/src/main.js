@@ -21,14 +21,15 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import VueI18n from 'vue-i18n'
 import './registerServiceWorker'
+import { initialLocale } from './site-locales'
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-  locale: localStorage.getItem('locale') || 'en',
-  fallbackLocale: 'en',
+  locale: initialLocale(),
+  fallbackLocale: 'en-US',
   sync: true,
   globalInjection: true,
 });
