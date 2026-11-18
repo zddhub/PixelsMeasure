@@ -8,7 +8,7 @@
           <p class="pm-platform-note">{{ copy.platformNote }}</p>
           <div class="pm-hero-actions">
             <a class="pm-store" :href="storeURL">
-              {{ copy.store }}
+              <img :src="storeBadge" :alt="copy.store">
             </a>
             <button class="pm-preview-button" type="button" aria-haspopup="dialog" @click="openPreview">
               <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
@@ -90,7 +90,7 @@
           <p>{{ copy.requirements }}</p>
         </div>
         <a class="pm-store pm-download-store" :href="storeURL">
-          {{ copy.store }}
+          <img :src="storeBadge" :alt="copy.store">
         </a>
         <dl class="pm-plans">
           <div v-for="plan in copy.plans" :key="plan.name">
@@ -141,6 +141,9 @@ export default {
   computed: {
     copy() {
       return copyFor(this.$i18n.locale);
+    },
+    storeBadge() {
+      return process.env.BASE_URL + "img/app-store/" + this.$i18n.locale + ".svg";
     }
   },
   methods: {

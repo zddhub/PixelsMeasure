@@ -114,21 +114,8 @@
   text-wrap: pretty;
 }
 
-.pm-store {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--pm-action-height, 48px);
-  max-width: 100%;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: var(--pm-ink);
-  color: #fff;
-  font-size: .9375rem;
-  font-weight: 650;
-  text-align: center;
-}
-.pm-store:hover { color: #fff; opacity: .83; }
+.pm-store { display: inline-flex; flex: none; border-radius: 8px; }
+.pm-store img { display: block; width: auto; height: var(--pm-action-height, 52px); }
 
 .pm-hero-actions {
   --pm-action-height: 48px;
