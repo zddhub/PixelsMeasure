@@ -16,12 +16,7 @@
 
 On Mac, measure your screen with **Live Measure** from the menu bar. Use Probe to read gaps between edges and Cross to check alignment and pointer coordinates. Pin the measurements you want to keep, then choose **Open as Document** to continue editing them with the captured image. Live Measure requires macOS Screen Recording permission; measuring an image does not.
 
-<details>
-<summary>Watch the Mac live measurement demo</summary>
-
 ![PixelsMeasure live measurement on Mac](assets/images/PixelsMeasure.gif)
-
-</details>
 
 On Mac, iPhone, and iPad:
 
