@@ -185,6 +185,7 @@ export default {
     reduceMotion: false,
     labelScale: 1,
     spacingBounds: canvas,
+    panelBounds: canvas,
     chromeBounds: [],
     swatchTextBounds: [],
     cursorImage: process.env.BASE_URL + "img/v5/probe-crosshair.png",
@@ -258,7 +259,7 @@ export default {
       if (cardIndex < 0) {
         const chrome = this.chromeBounds.find(bounds => roundedBoundsAt(point, bounds));
         edges = chrome ? roundedBoundsAt(point, chrome)
-          : probeAt(point, [...cards, ...this.chromeBounds], this.spacingBounds);
+          : probeAt(point, [...cards, ...this.chromeBounds], this.panelBounds);
       } else {
         const swatch = swatches[cardIndex];
         const card = roundedBoundsAt(point, cards[cardIndex]);
@@ -269,6 +270,8 @@ export default {
           ? roundedBoundsAt(point, text)
           : probeAt(point, [swatch, ...textBounds], whiteArea));
       }
+      if (!edges) return null;
+
       const { left, right, top, bottom } = edges;
       const horizontal = axis !== "vertical"
         ? `M${left} ${y}H${right}M${left} ${y - 8}v16M${right} ${y - 8}v16` : "";
@@ -345,7 +348,7 @@ export default {
       });
     },
     updateSpacingLayout() {
-      const { width, height } = this.$el.getBoundingClientRect();
+      const { left, top, width, height } = this.$el.getBoundingClientRect();
       if (width <= 0) return;
 
       this.labelScale = canvas.width / width;
@@ -353,6 +356,15 @@ export default {
         ...canvas,
         y: -this.spacingStage.offsetTop * this.labelScale,
         height: height * this.labelScale
+      };
+      const panel = this.spacingPanel.getBoundingClientRect();
+      const style = getComputedStyle(this.spacingPanel);
+      this.panelBounds = {
+        x: (panel.left - left) * this.labelScale,
+        y: this.spacingBounds.y + (panel.top - top) * this.labelScale,
+        width: panel.width * this.labelScale,
+        height: panel.height * this.labelScale,
+        radius: parseFloat(style.borderTopLeftRadius) * this.labelScale
       };
       this.$nextTick(() => {
         if (!this.$el.isConnected) return;
@@ -406,8 +418,7 @@ export default {
       point.x = event.clientX;
       point.y = event.clientY;
       const { x, y } = point.matrixTransform(matrix.inverse());
-      const bounds = this.spacingBounds;
-      this.pointer = { x: clamp(x, 0, bounds.width), y: clamp(y, bounds.y, bounds.y + bounds.height) };
+      this.pointer = roundedBoundsAt({ x, y }, this.panelBounds) ? { x, y } : null;
     }
   },
   mounted() {

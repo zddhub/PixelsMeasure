@@ -1,6 +1,6 @@
 // Intersect a scan line with a rounded rectangle. Transpose the axes
 // for a vertical scan so both directions use the same corner geometry.
-function scanSpan(coordinate, crossStart, crossSize, start, size, radius) {
+function scanSpan(coordinate, crossStart, crossSize, start, size, radius = 0) {
   const depth = Math.min(coordinate - crossStart, crossStart + crossSize - coordinate);
   if (depth < 0) return null;
 
@@ -18,11 +18,12 @@ export function roundedBoundsAt({x, y}, shape) {
   return {left, right, top, bottom};
 }
 
-export function probeAt({x, y}, shapes, border) {
-  let left = border.x;
-  let right = border.x + border.width;
-  let top = border.y;
-  let bottom = border.y + border.height;
+export function probeAt(point, shapes, border) {
+  const bounds = roundedBoundsAt(point, border);
+  if (!bounds) return null;
+
+  const {x, y} = point;
+  let {left, right, top, bottom} = bounds;
 
   for (const shape of shapes) {
     const horizontal = scanSpan(y, shape.y, shape.height, shape.x, shape.width, shape.radius);
