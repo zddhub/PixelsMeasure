@@ -90,6 +90,9 @@
           <h2 id="pm-download-title">{{ copy.download }}</h2>
           <p>{{ copy.requirements }}</p>
         </div>
+        <a class="pm-store pm-download-store" :href="storeURL" :aria-label="copy.store">
+          <img :src="storeBadge" alt="" width="155" height="52">
+        </a>
         <dl class="pm-plans">
           <div v-for="plan in copy.plans" :key="plan.name">
             <dt>{{ plan.name }}</dt>
@@ -103,9 +106,6 @@
             </dd>
           </div>
         </dl>
-        <a class="pm-store pm-download-store" :href="storeURL" :aria-label="copy.store">
-          <img :src="storeBadge" alt="" width="155" height="52">
-        </a>
       </div>
     </section>
 

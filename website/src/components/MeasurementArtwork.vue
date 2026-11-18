@@ -8,8 +8,8 @@
         :transform="'translate(' + swatch.x + ' ' + swatch.y + ')'">
         <rect x="-6" y="-6" width="174" height="150" rx="16" fill="#fff" stroke="#e5e9f2"/>
         <rect :width="swatch.width" :height="swatch.height" :rx="swatch.radius" :fill="swatch.color"/>
-        <text x="3" y="121" class="pm-canvas-name">{{ swatch.name }}</text>
-        <text x="3" y="136" class="pm-canvas-meta">{{ swatch.color }}</text>
+        <text x="3" :y="swatchNameBaseline" :style="{ fontSize: swatchNameSize + 'px' }" class="pm-canvas-name">{{ swatch.name }}</text>
+        <text x="3" :y="swatchHexBaseline" :style="{ fontSize: swatchHexSize + 'px' }" class="pm-canvas-meta">{{ swatch.color }}</text>
       </g>
       <g v-if="mode === 'spacing' && !probePoint">
         <path class="pm-red-line" :d="gapMarker.path" fill="none"/>
@@ -205,6 +205,25 @@ export default {
       const { x, y, width, height } = this.spacingBounds;
       return `${x} ${y} ${width} ${height}`;
     },
+    swatchNameSize() {
+      return Math.min(26, Math.max(15, 11 * this.labelScale));
+    },
+    swatchHexSize() {
+      return Math.min(24, Math.max(12, 10 * this.labelScale));
+    },
+    swatchNameBaseline() {
+      return Math.min(121, 136 - this.swatchHexSize);
+    },
+    swatchHexBaseline() {
+      return this.swatchHexSize > 12 ? 141 : 136;
+    },
+    swatchLabelBand() {
+      const labels = this.swatchTextBounds.flat();
+      return {
+        top: Math.min(140, ...labels.map(bounds => bounds.y)),
+        bottom: Math.max(170, ...labels.map(bounds => bounds.y + bounds.height))
+      };
+    },
     gapLabelTransform() {
       return `translate(${gapCenter - 23 * this.labelScale} ${91 - 20 * this.labelScale}) scale(${this.labelScale})`;
     },
@@ -267,7 +286,8 @@ export default {
       const above = y - height - (inGap ? 9 : 12);
       const below = y + 12;
       // Keep the capsule away from the names and hex codes under the swatches.
-      const clearsNames = origin => origin + height <= 140 || origin >= 170;
+      const { top: labelsTop, bottom: labelsBottom } = this.swatchLabelBand;
+      const clearsNames = origin => origin + height <= labelsTop || origin >= labelsBottom;
       const minY = this.spacingBounds.y + minMargin;
       const maxY = this.spacingBounds.y + this.spacingBounds.height - minMargin;
       const fits = origin => origin >= minY && origin + height <= maxY;
@@ -278,7 +298,7 @@ export default {
       );
       const preferred = inGap ? [above, below] : [below, above];
       const labelY = preferred.find(origin => fits(origin) && clearsNames(origin) && clearsChrome(origin));
-      const topEdge = labelY === undefined ? 140 - height : labelY;
+      const topEdge = labelY === undefined ? labelsTop - height : labelY;
 
       return {
         lines: horizontal + vertical,
@@ -335,7 +355,11 @@ export default {
         y: -this.spacingStage.offsetTop * this.labelScale,
         height: height * this.labelScale
       };
-      this.$nextTick(this.updateChromeBounds);
+      this.$nextTick(() => {
+        if (!this.$el.isConnected) return;
+        this.updateTextBounds();
+        this.updateChromeBounds();
+      });
     },
     updateChromeBounds() {
       if (!this.$el.isConnected) return;
@@ -401,13 +425,9 @@ export default {
       };
       Object.entries(this.pointerHandlers).forEach(([event, handler]) => this.spacingPanel.addEventListener(event, handler));
       this.updateSpacingLayout();
-      this.updateTextBounds();
       if (document.fonts) {
         document.fonts.ready.then(() => {
-          if (this.$el.isConnected) {
-            this.updateTextBounds();
-            this.updateSpacingLayout();
-          }
+          if (this.$el.isConnected) this.updateSpacingLayout();
         });
       }
       if (window.ResizeObserver) {
