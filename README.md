@@ -8,9 +8,11 @@
 
 [![Download on the App Store](assets/images/download-on-app-store-badge.svg)][app-store]
 
+[Visit the PixelsMeasure website](https://pixelsmeasure.com/)
+
 **Requires macOS 14, iOS 17, or iPadOS 17 or later.** Free to download, with optional Pro purchases.
 
-## What's new in 5.0
+## How it works
 
 On Mac, measure your screen with **Live Measure** from the menu bar. Use Probe to read gaps between edges and Cross to check alignment and pointer coordinates. Pin the measurements you want to keep, then choose **Open as Document** to continue editing them with the captured image. Live Measure requires macOS Screen Recording permission; measuring an image does not.
 
@@ -22,7 +24,7 @@ On Mac, iPhone, and iPad:
 
 ![Annotated workshop mockup with a 240 × 56 px button and a 26 px gap](website/public/img/v5/workflow-workshop-annotated.png)
 
-## Free and Pro in 5.0
+## Free and Pro
 
 | Free | Pro |
 | --- | --- |
@@ -32,13 +34,15 @@ On Mac, iPhone, and iPad:
 
 Try the Pro tools in the sample document included in the app.
 
-## Website and support
+## Support
 
-This repository hosts the [PixelsMeasure website](https://pixelsmeasure.com/), support resources, and issue tracker. See the [website README](website/README.md) for local setup.
-
-For bugs or feature requests, search [existing issues][issues] or [open a new issue][new-issue]. For private support, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).
+For bugs or feature requests, search [existing issues][issues] or [open a new issue][new-issue]. When reporting a bug, include your PixelsMeasure version, OS version, and steps to reproduce it. For private support, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).
 
 PixelsMeasure processes images and measurements on your device. See the [Privacy Policy](Privacy.md) and [Terms of Service](tos.md) for details.
+
+## About this repository
+
+This repository contains the website source, support resources, and issue tracker. To run the site locally, see the [website setup guide](website/README.md).
 
 [app-store]: https://apps.apple.com/app/pixelsmeasure/id1638740542
 [issues]: https://github.com/zddhub/PixelsMeasure/issues
