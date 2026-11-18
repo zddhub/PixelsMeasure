@@ -192,9 +192,9 @@
 .pm-probe {
   --pm-probe-inset: clamp(12px, 3vw, 40px);
   position: relative;
+  isolation: isolate;
   width: 100%;
   margin: 0;
-  overflow: hidden;
   border: 1px solid #cddcf5;
   border-radius: 18px;
   background: linear-gradient(140deg, #e8f1ff, #dbe8fc);
@@ -214,16 +214,16 @@
 .pm-probe-heading h3 { margin: 0; font-size: clamp(1.3rem, 2.1vw, 1.75rem); }
 .pm-demo-canvas { display: block; width: 100%; height: auto; }
 .pm-probe-stage { aspect-ratio: 640 / 250; background: #ffffff24; }
-.pm-probe > svg {
+.pm-probe > .pm-demo-canvas {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
 }
 .pm-probe:has(> .pm-demo-live) .pm-probe-stage { cursor: none; }
-.pm-probe-heading, .pm-probe-footer { position: relative; z-index: 1; }
 .pm-probe-footer {
   display: flex;
   align-items: center;

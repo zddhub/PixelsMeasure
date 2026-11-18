@@ -20,11 +20,11 @@
       </g>
       <g v-if="liveReading" class="pm-active-probe" aria-hidden="true">
         <path class="pm-red-line" :d="liveReading.lines" fill="none"/>
-        <image :href="cursorImage" :x="probePoint.x - 11" :y="probePoint.y - 11" width="24" height="24"/>
         <g class="pm-red-tag" :transform="liveReading.labelTransform">
           <rect :width="liveReading.labelWidth" height="20" rx="10"/>
           <text :x="liveReading.labelWidth / 2" y="10">{{ liveReading.label }}</text>
         </g>
+        <image :href="cursorImage" :x="probePoint.x - 11" :y="probePoint.y - 11" width="24" height="24"/>
       </g>
     </g>
 
