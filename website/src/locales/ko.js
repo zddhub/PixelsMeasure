@@ -40,5 +40,6 @@ export default {
   ],
   download: "PixelsMeasure 다운로드",
   requirements: "macOS 14, iOS 17, iPadOS 17 이상에서 사용할 수 있습니다.",
+  guide: "제품 가이드",
   footer: ["개인정보 처리방침", "서비스 이용약관", "문의", "GitHub", "블로그"]
 };

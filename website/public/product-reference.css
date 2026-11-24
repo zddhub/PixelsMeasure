@@ -1,0 +1,26 @@
+.pm-reference {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1rem, 5vw, 3rem) 3rem;
+  color: #101627;
+  background: #f6f8fd;
+  font: 1rem/1.65 system-ui, sans-serif;
+  overflow-wrap: break-word;
+}
+
+.pm-reference header {
+  border-bottom: 1px solid #d1daeb;
+  padding-bottom: 1rem;
+  font-weight: 700;
+}
+
+.pm-reference h1, .pm-reference h2 { line-height: 1.2; }
+.pm-reference h1 { font-size: clamp(2rem, 1.3rem + 3vw, 3.25rem); }
+.pm-reference h2 { margin-top: 2rem; font-size: 1.4rem; }
+.pm-reference p { margin-block: .75rem 1rem; }
+.pm-reference ul { padding-inline-start: 1.3rem; }
+.pm-reference li + li { margin-top: .35rem; }
+
+.pm-reference a { color: #1645b4; text-decoration: underline; text-underline-offset: .16em; }
+.pm-reference a:focus-visible { outline: 2px solid; outline-offset: 3px; }
+.pm-reference footer { border-top: 1px solid #d1daeb; margin-top: 2rem; }

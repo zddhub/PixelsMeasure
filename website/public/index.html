@@ -21,11 +21,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <meta name="description" content="Measure live on your Mac, or open images as editable pixel measurement documents on Mac, iPhone, and iPad.">
+    <meta name="description" content="<%- discovery.summary %>">
+    <link rel="canonical" href="<%- discovery.homeURL %>">
+    <link rel="describedby" href="<%- BASE_URL %>llms.txt">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PixelsMeasure">
+    <meta property="og:title" content="<%- discovery.title %>">
+    <meta property="og:description" content="<%- discovery.summary %>">
+    <meta property="og:url" content="<%- discovery.homeURL %>">
+    <meta property="og:image" content="<%- discovery.homeURL + discovery.image %>">
+    <meta property="og:image:alt" content="A workshop mockup annotated with pixel measurements in PixelsMeasure">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json"><%= discovery.jsonLD %></script>
     <meta name="author" content="zddhub">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <link rel="apple-touch-icon" href="/img/icons/apple-touch-icon-152x152.png">
-    <title>PixelsMeasure — Pixel measurements for Mac, iPhone, and iPad</title>
+    <title><%- discovery.title %></title>
+    <link rel="stylesheet" href="<%- BASE_URL %>product-reference.css">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..750&amp;display=swap" rel="stylesheet">
 
@@ -40,10 +52,26 @@
     </script>
   </head>
   <body>
-    <noscript>
-      <strong>We're sorry but the website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <main class="pm-reference">
+        <h1>PixelsMeasure</h1>
+        <p><%- discovery.summary %></p>
+        <p><a href="<%- discovery.storeURL %>">Download on the App Store</a>. <%- discovery.download %></p>
+        <h2>What you can measure</h2>
+        <ul>
+          <% for (const feature of discovery.features) { %>
+          <li><%- feature %></li>
+          <% } %>
+        </ul>
+        <h2>System requirements</h2>
+        <ul>
+          <% for (const system of discovery.systems) { %>
+          <li><%- system %></li>
+          <% } %>
+        </ul>
+        <p><a href="<%- BASE_URL + discovery.guidePath %>">Product guide</a></p>
+      </main>
+    </div>
     <!-- built files will be auto injected -->
   </body>
 </html>

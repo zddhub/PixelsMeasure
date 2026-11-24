@@ -40,5 +40,6 @@ export default {
   ],
   download: "下載 PixelsMeasure",
   requirements: "需要 macOS 14、iOS 17、iPadOS 17 或以上版本。",
+  guide: "產品指南",
   footer: ["隱私權政策", "服務條款", "聯絡我們", "GitHub", "部落格"]
 };

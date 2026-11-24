@@ -40,5 +40,6 @@ export default {
   ],
   download: "Scarica PixelsMeasure",
   requirements: "Richiede macOS 14, iOS 17, iPadOS 17 o versioni successive.",
+  guide: "Guida al prodotto",
   footer: ["Informativa sulla privacy", "Termini di servizio", "Contatti", "GitHub", "Blog"]
 };

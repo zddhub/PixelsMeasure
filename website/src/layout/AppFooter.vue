@@ -3,6 +3,7 @@
     <div class="pm-wrap pm-footer-inner">
       <small>© 2022–{{ year }} ZDDHUB</small>
       <nav :aria-label="copy.footerNav">
+        <a :href="guideURL">{{ copy.guide }}{{ legalLanguage }}</a>
         <router-link to="/privacy">{{ copy.footer[0] }}{{ legalLanguage }}</router-link>
         <router-link to="/terms-of-service">{{ copy.footer[1] }}{{ legalLanguage }}</router-link>
         <a href="mailto:pixelsmeasure@gmail.com">{{ copy.footer[2] }}</a>
@@ -17,7 +18,10 @@
 import { copyFor } from "../landing-copy";
 
 export default {
-  data: () => ({ year: new Date().getFullYear() }),
+  data: () => ({
+    year: new Date().getFullYear(),
+    guideURL: process.env.BASE_URL + "guide/"
+  }),
   computed: {
     legalLanguage() {
       const locale = this.$i18n.locale;
