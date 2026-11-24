@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const { SiteDiscoveryPlugin, homepageDiscovery, languages, defaultLocale } = require('./site-discovery');
 
 module.exports = {
+  productionSourceMap: false,
   // publicPath: process.env.NODE_ENV === "production" ? "/PixelsMeasure/" : "/",
   chainWebpack(config) {
     const html = config.plugin('html');
