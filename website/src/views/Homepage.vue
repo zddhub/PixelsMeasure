@@ -3,7 +3,7 @@
     <section class="pm-hero" aria-labelledby="pm-title">
       <div class="pm-wrap pm-hero-layout">
         <div class="pm-hero-copy">
-          <h1 id="pm-title">{{ creative.hero }}</h1>
+          <h1 id="pm-title">{{ copy.hero[0] }} <br>{{ copy.hero[1] }}</h1>
           <p>{{ copy.intro }}</p>
           <p class="pm-platform-note">{{ copy.platformNote }}</p>
           <div class="pm-hero-actions">

@@ -7,6 +7,7 @@ export default {
   store: "App Store에서 다운로드", watchPreview: "영상 보기",
   previewTitle: "PixelsMeasure", closePreview: "미리보기 닫기",
   previewDescription: "PixelsMeasure 제품 소개 영상",
+  hero: ["눈에 보이는 그대로,", "픽셀 단위로 정확하게."],
   intro: "스크린샷과 사진 속 크기, 간격, 정렬을 확인하세요.",
   platformNote: "Mac, iPhone, iPad 지원", freeNote: "무료 다운로드",
   proLink: "무료 버전과 Pro 비교", tryProbe: "프로브로 간격 재보기",

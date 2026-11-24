@@ -7,6 +7,7 @@ export default {
   store: "Загрузить в App Store", watchPreview: "Смотреть видео",
   previewTitle: "PixelsMeasure", closePreview: "Закрыть видео",
   previewDescription: "Презентационный ролик PixelsMeasure",
+  hero: ["Измеряйте то, что видите.", "С точностью до пикселя."],
   intro: "Проверяйте размеры, отступы и выравнивание на снимках экрана и фотографиях.",
   platformNote: "Для Mac, iPhone и iPad", freeNote: "Скачать бесплатно",
   proLink: "Сравнить бесплатную версию и Pro", tryProbe: "Попробуйте измерительный зонд",

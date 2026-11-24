@@ -7,6 +7,7 @@ export default {
   store: "在 App Store 下載", watchPreview: "觀看影片",
   previewTitle: "PixelsMeasure", closePreview: "關閉預覽",
   previewDescription: "PixelsMeasure 產品宣傳片",
+  hero: ["畫面上的尺寸，", "精確到每個像素。"],
   intro: "檢查螢幕截圖與照片中的尺寸、間距和對齊。",
   platformNote: "適用於 Mac、iPhone 和 iPad", freeNote: "免費下載",
   proLink: "比較免費版與 Pro", tryProbe: "試用間距探針",

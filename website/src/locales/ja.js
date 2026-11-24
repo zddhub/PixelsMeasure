@@ -7,6 +7,7 @@ export default {
   store: "App Storeでダウンロード", watchPreview: "動画を見る",
   previewTitle: "PixelsMeasure", closePreview: "プレビューを閉じる",
   previewDescription: "PixelsMeasureの製品紹介動画",
+  hero: ["見たままを、", "1ピクセル単位で。"],
   intro: "スクリーンショットや写真の寸法、余白、位置合わせを確認できます。",
   platformNote: "Mac、iPhone、iPadに対応", freeNote: "無料でダウンロード",
   proLink: "無料版とProを比較", tryProbe: "プローブで間隔を測ってみる",

@@ -7,6 +7,7 @@ export default {
   store: "Descargar en App Store", watchPreview: "Ver video",
   previewTitle: "PixelsMeasure", closePreview: "Cerrar vista previa",
   previewDescription: "Video de presentación de PixelsMeasure",
+  hero: ["Mide lo que ves.", "Con precisión de un píxel."],
   intro: "Revisa medidas, espacios y alineaciones en tus capturas de pantalla y fotos.",
   platformNote: "Para Mac, iPhone y iPad", freeNote: "Descarga gratuita",
   proLink: "Compara la versión gratis con Pro", tryProbe: "Prueba la sonda",
