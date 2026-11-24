@@ -3,7 +3,7 @@
     <section class="pm-hero" aria-labelledby="pm-title">
       <div class="pm-wrap pm-hero-layout">
         <div class="pm-hero-copy">
-          <h1 id="pm-title">{{ copy.hero[0] }} <span>{{ copy.hero[1] }}</span></h1>
+          <h1 id="pm-title">{{ creative.hero }}</h1>
           <p>{{ copy.intro }}</p>
           <p class="pm-platform-note">{{ copy.platformNote }}</p>
           <div class="pm-hero-actions">
@@ -22,7 +22,7 @@
         </div>
         <div class="pm-probe">
           <div class="pm-probe-heading">
-            <h3>{{ copy.tryProbe }}</h3>
+            <h2>{{ copy.tryProbe }}</h2>
             <span class="pm-probe-hint">{{ copy.probeHint }}</span>
             <span class="pm-probe-touch-hint">{{ copy.probeTouchHint }}</span>
           </div>
@@ -37,6 +37,27 @@
             </button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="spacing" class="pm-spacing" aria-labelledby="pm-spacing-title">
+      <div class="pm-wrap pm-section pm-spacing-inner">
+        <div class="pm-spacing-copy">
+          <p class="pm-release">PixelsMeasure 5.1</p>
+          <h2 id="pm-spacing-title">{{ creative.spacingTitle }}</h2>
+          <dl class="pm-spacing-platforms">
+            <div>
+              <dt>Mac</dt>
+              <dd>{{ creative.mac }}</dd>
+            </div>
+            <div>
+              <dt>iPhone &amp; iPad</dt>
+              <dd>{{ creative.touch }}</dd>
+            </div>
+          </dl>
+        </div>
+        <img class="pm-spacing-image" :src="creativeBase + 'spacing-preview.jpg'"
+          :alt="creative.spacingAlt" width="1260" height="548" loading="lazy">
       </div>
     </section>
 
@@ -128,6 +149,8 @@
 <script>
 import MeasurementArtwork from "../components/MeasurementArtwork.vue";
 import { copyFor, imageBase, storeURL } from "../landing-copy";
+import creativeCopy from "../locales/creative";
+import { defaultLocale } from "../site-locales";
 
 export default {
   name: "Homepage",
@@ -136,11 +159,15 @@ export default {
     animationsPaused: false,
     previewOpen: false,
     imageBase,
+    creativeBase: process.env.BASE_URL + "img/v5.1/",
     storeURL
   }),
   computed: {
     copy() {
       return copyFor(this.$i18n.locale);
+    },
+    creative() {
+      return creativeCopy[this.$i18n.locale] || creativeCopy[defaultLocale];
     },
     storeBadge() {
       return process.env.BASE_URL + "img/app-store/" + this.$i18n.locale + ".svg";

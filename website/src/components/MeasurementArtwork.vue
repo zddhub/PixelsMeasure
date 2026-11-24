@@ -156,8 +156,8 @@ const gapMarker = {
 const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
 const demoStops = [
-  { time: 1000, x: gapCenter, y: 100 },
-  { time: 1700, x: 110, y: 72 },
+  { time: 300, x: gapCenter, y: 100 },
+  { time: 1050, x: 110, y: 72 },
   { time: 2750, x: 110, y: 72 },
   { time: 3650, x: 335, y: 80 },
   { time: 4500, x: 335, y: 80 },
@@ -379,7 +379,7 @@ export default {
 
       const inverse = matrix.inverse();
       const range = document.createRange();
-      const nodes = this.spacingPanel.querySelectorAll(".pm-probe-heading h3, .pm-probe-heading span, .pm-motion-toggle");
+      const nodes = this.spacingPanel.querySelectorAll(".pm-probe-heading h2, .pm-probe-heading span, .pm-motion-toggle");
       const textAndControls = Array.from(nodes).flatMap(node => {
         range.selectNodeContents(node);
         const rects = node.tagName === "BUTTON" ? node.getClientRects() : range.getClientRects();
