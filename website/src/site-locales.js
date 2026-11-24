@@ -13,32 +13,12 @@ export const siteLocales = [
   { tag: "es-MX", label: "Español (México)" }
 ];
 
-export function matchLocale(language) {
-  const code = String(language || "").toLowerCase();
-  if (code === "cn") return "zh-Hans"; // Language preference from the previous site.
-  if (code === "zh" || code.startsWith("zh-")) {
-    if (/^zh-hans(?:-|$)/.test(code)) return "zh-Hans";
-    return /^zh-(hant|tw|hk|mo)(?:-|$)/.test(code) ? "zh-Hant" : "zh-Hans";
-  }
-  const base = code.split("-")[0];
-  const match = siteLocales.find(({ tag }) => tag.split("-")[0] === base);
-  return match && match.tag;
+export function localePath(locale) {
+  return locale === defaultLocale ? "" : locale + "/";
 }
 
 export function initialLocale() {
-  let saved;
-  try {
-    saved = matchLocale(window.localStorage.getItem("locale"));
-  } catch {
-    // Language switching still works when browser storage is disabled.
-  }
-  return saved || (navigator.languages || [navigator.language]).map(matchLocale).find(Boolean) || defaultLocale;
-}
-
-export function saveLocale(locale) {
-  try {
-    window.localStorage.setItem("locale", locale);
-  } catch {
-    // The selection still applies to the current page.
-  }
+  const path = window.location.pathname.slice(process.env.BASE_URL.length).replace(/index\.html$/, "");
+  const page = siteLocales.find(({ tag }) => localePath(tag) === path);
+  return page ? page.tag : defaultLocale;
 }

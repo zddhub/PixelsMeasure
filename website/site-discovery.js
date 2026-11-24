@@ -1,3 +1,9 @@
+const { readFileSync } = require("fs");
+const { join } = require("path");
+const markdown = require("markdown-it")();
+const { landingCopy } = require("./src/landing-copy.js");
+const { defaultLocale, localePath, siteLocales } = require("./src/site-locales.js");
+
 const origin = "https://pixelsmeasure.com";
 const homeURL = origin + "/";
 const guidePath = "guide/";
@@ -9,6 +15,13 @@ const summary = "PixelsMeasure is a pixel ruler for Mac, iPhone, and iPad. Measu
 const systems = ["macOS 14 or later", "iOS 17 or later", "iPadOS 17 or later"];
 const download = "Free to download with optional PixelsMeasure Pro purchases.";
 const image = "img/v5/workflow-workshop-annotated.png";
+const policies = [
+  { path: "privacy/", source: "Privacy.md", label: "Privacy policy" },
+  { path: "terms-of-service/", source: "tos.md", label: "Terms of service" }
+];
+const languages = siteLocales.map(({ tag, label }) => ({
+  tag, label, path: localePath(tag), url: homeURL + localePath(tag)
+}));
 
 const sections = [
   {
@@ -34,7 +47,7 @@ const sections = [
   {
     id: "spacing",
     heading: "How do I preview spacing or duplicate a measurement?",
-    answer: "In PixelsMeasure 5.1, select a measurement in a document. On Mac, hold Option while hovering over another measurement or an image edge to preview the spacing. On iPhone and iPad, touch and hold the target instead. To duplicate a measurement with live gap readouts, Option-drag it on Mac, or touch and hold it and then drag on iPhone or iPad."
+    answer: "These gestures require PixelsMeasure 5.1 or later. Check Version History in your App Store region to see if the update is available. In a document, select a measurement. On Mac, hold Option while hovering over another measurement or an image edge to preview the spacing. On iPhone and iPad, touch and hold the target instead. To duplicate a measurement with live gap readouts, Option-drag it on Mac, or touch and hold it and then drag on iPhone or iPad."
   },
   {
     id: "free-and-pro",
@@ -50,8 +63,7 @@ const sections = [
 
 const links = [
   { text: "Download PixelsMeasure on the App Store", url: storeURL },
-  { text: "Privacy policy", url: homeURL + "#/privacy" },
-  { text: "Terms of service", url: homeURL + "#/terms-of-service" },
+  ...policies.map(({ path, label }) => ({ text: label, url: homeURL + path })),
   { text: "Report an issue", url: repositoryURL + "/issues" },
   { text: "Email support", url: "mailto:pixelsmeasure@gmail.com" }
 ];
@@ -96,7 +108,7 @@ function guideHTML(base) {
     `<section aria-labelledby="${id}"><h2 id="${id}">${escapeHTML(heading)}</h2><p>${escapeHTML(answer)}</p></section>`
   ).join("\n");
   const resources = links.map(({ text, url }) =>
-    `<li><a href="${escapeHTML(url)}">${escapeHTML(text)}</a></li>`
+    `<li><a href="${escapeHTML(url.startsWith(homeURL) ? base + url.slice(homeURL.length) : url)}">${escapeHTML(text)}</a></li>`
   ).join("\n");
   return `<!DOCTYPE html>
 <html lang="en-US">
@@ -141,10 +153,33 @@ function guideMarkdown() {
   ].join("\n\n") + "\n";
 }
 
+function policyHTML({ path, source }, base) {
+  const content = readFileSync(join(__dirname, "..", source), "utf8");
+  const title = content.match(/^# (.+)$/m)[1];
+  return `<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHTML(title)}</title>
+  <link rel="canonical" href="${homeURL + path}">
+  <link rel="icon" href="${base}favicon.ico">
+  <link rel="stylesheet" href="${base}product-reference.css">
+</head>
+<body class="pm-reference">
+  <header><a href="${base}">PixelsMeasure</a></header>
+  <main>${markdown.render(content)}</main>
+</body>
+</html>
+`;
+}
+
 function discoveryAssets(base) {
+  const policyPages = policies.map(policy => [policy.path + "index.html", policyHTML(policy, base)]);
+  const urls = [...languages.map(({ url }) => url), guideURL, ...policies.map(({ path }) => homeURL + path)];
   return {
     "robots.txt": `User-agent: *\nAllow: /\n\nUser-agent: OAI-SearchBot\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`,
-    "sitemap.xml": `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${homeURL}</loc></url>\n  <url><loc>${guideURL}</loc></url>\n</urlset>\n`,
+    "sitemap.xml": `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  ${urls.map(url => `<url><loc>${url}</loc></url>`).join("\n  ")}\n</urlset>\n`,
     "llms.txt": `# PixelsMeasure
 
 > ${summary}
@@ -159,11 +194,13 @@ ${download}
 
 ## Support
 
-- [Privacy policy](${homeURL}#/privacy): On-device processing, screen capture, and document storage.
+- [Privacy policy](${homeURL}privacy/): On-device processing, screen capture, and document storage.
 - [Issue tracker](${repositoryURL}/issues): Public bug reports and feature requests.
 `,
     [guidePath + "index.html"]: guideHTML(base),
-    [guidePath + "index.md"]: guideMarkdown()
+    [guidePath + "index.md"]: guideMarkdown(),
+    ...Object.fromEntries(policyPages),
+    "Privacy.html": policyPages[0][1]
   };
 }
 
@@ -181,11 +218,25 @@ class SiteDiscoveryPlugin {
   }
 }
 
-module.exports = {
-  SiteDiscoveryPlugin,
-  discovery: {
-    title, summary, download, systems, homeURL, guidePath, storeURL, image,
-    features: software.featureList,
-    jsonLD: JSON.stringify(software).replace(/</g, "\\u003c")
-  }
-};
+function homepageDiscovery(locale) {
+  const copy = landingCopy[locale];
+  const english = locale === defaultLocale;
+  const canonical = homeURL + localePath(locale);
+  const features = english ? software.featureList : [copy.live.title, ...copy.measurements.map(tool => tool.title)];
+  const description = english ? summary : `${copy.intro} ${copy.platformNote}`;
+  return {
+    locale, copy, canonical, languages, guidePath, storeURL, image, homeURL,
+    title: english ? title : `PixelsMeasure — ${copy.pageTitle}`,
+    summary: description,
+    download: english ? download : copy.freeNote,
+    features,
+    jsonLD: JSON.stringify({
+      ...software,
+      inLanguage: locale,
+      description,
+      featureList: features
+    }).replace(/</g, "\\u003c")
+  };
+}
+
+module.exports = { SiteDiscoveryPlugin, homepageDiscovery, languages, defaultLocale };

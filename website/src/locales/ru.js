@@ -1,4 +1,4 @@
-import { measurements, workflowSteps } from "./landing-sections";
+import { measurements, workflowSteps } from "./landing-sections.js";
 
 export default {
   nav: ["Как это работает", "Инструменты", "Скачать"],

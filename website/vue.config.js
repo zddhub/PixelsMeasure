@@ -1,17 +1,29 @@
 const webpack = require('webpack');
-const { SiteDiscoveryPlugin, discovery } = require('./site-discovery');
+const { SiteDiscoveryPlugin, homepageDiscovery, languages, defaultLocale } = require('./site-discovery');
 
 module.exports = {
   // publicPath: process.env.NODE_ENV === "production" ? "/PixelsMeasure/" : "/",
   chainWebpack(config) {
-    config.plugin('html').tap(([options]) => {
+    const html = config.plugin('html');
+    const HtmlPlugin = html.get('plugin');
+    html.tap(([options]) => {
       const templateParameters = options.templateParameters;
-      options.templateParameters = (...args) => {
-        const parameters = templateParameters(...args);
-        parameters.discovery = discovery;
-        return parameters;
-      };
-      return [options];
+      const localized = locale => ({
+        ...options,
+        templateParameters: (...args) => {
+          const parameters = templateParameters(...args);
+          parameters.discovery = homepageDiscovery(locale);
+          return parameters;
+        }
+      });
+      for (const { tag, path } of languages) {
+        if (tag === defaultLocale) continue;
+        config.plugin(`html-${tag}`).use(HtmlPlugin, [{
+          ...localized(tag),
+          filename: path + 'index.html'
+        }]);
+      }
+      return [localized(defaultLocale)];
     });
   },
   configureWebpack: {

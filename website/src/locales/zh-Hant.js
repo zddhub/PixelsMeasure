@@ -1,4 +1,4 @@
-import { measurements, workflowSteps } from "./landing-sections";
+import { measurements, workflowSteps } from "./landing-sections.js";
 
 export default {
   nav: ["操作流程", "測量工具", "下載"],

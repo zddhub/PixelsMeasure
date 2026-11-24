@@ -16,19 +16,23 @@
 
 -->
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="<%- discovery.locale %>">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="description" content="<%- discovery.summary %>">
-    <link rel="canonical" href="<%- discovery.homeURL %>">
+    <link rel="canonical" href="<%- discovery.canonical %>">
+    <% for (const language of discovery.languages) { %>
+    <link rel="alternate" hreflang="<%- language.tag %>" href="<%- language.url %>">
+    <% } %>
+    <link rel="alternate" hreflang="x-default" href="<%- discovery.homeURL %>">
     <link rel="describedby" href="<%- BASE_URL %>llms.txt">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="PixelsMeasure">
     <meta property="og:title" content="<%- discovery.title %>">
     <meta property="og:description" content="<%- discovery.summary %>">
-    <meta property="og:url" content="<%- discovery.homeURL %>">
+    <meta property="og:url" content="<%- discovery.canonical %>">
     <meta property="og:image" content="<%- discovery.homeURL + discovery.image %>">
     <meta property="og:image:alt" content="A workshop mockup annotated with pixel measurements in PixelsMeasure">
     <meta name="twitter:card" content="summary_large_image">
@@ -56,20 +60,32 @@
       <main class="pm-reference">
         <h1>PixelsMeasure</h1>
         <p><%- discovery.summary %></p>
-        <p><a href="<%- discovery.storeURL %>">Download on the App Store</a>. <%- discovery.download %></p>
-        <h2>What you can measure</h2>
+        <p><a href="<%- discovery.storeURL %>"><%- discovery.copy.store %></a>. <%- discovery.download %></p>
+        <h2><%- discovery.copy.tools %></h2>
         <ul>
           <% for (const feature of discovery.features) { %>
           <li><%- feature %></li>
           <% } %>
         </ul>
-        <h2>System requirements</h2>
-        <ul>
-          <% for (const system of discovery.systems) { %>
-          <li><%- system %></li>
+        <h2><%- discovery.copy.live.title %></h2>
+        <p><%- discovery.copy.live.body %></p>
+        <p><%- discovery.copy.live.permission %></p>
+        <h2><%- discovery.copy.workflow %></h2>
+        <ol>
+          <% for (const step of discovery.copy.workflowSteps) { %>
+          <li><strong><%- step.title %></strong> <%- step.body %></li>
           <% } %>
-        </ul>
-        <p><a href="<%- BASE_URL + discovery.guidePath %>">Product guide</a></p>
+        </ol>
+        <h2><%- discovery.copy.download %></h2>
+        <p><%- discovery.copy.requirements %></p>
+        <p><a href="<%- BASE_URL + discovery.guidePath %>" hreflang="en-US"><%- discovery.copy.guide %></a></p>
+        <nav aria-label="<%- discovery.copy.language %>">
+          <ul>
+            <% for (const language of discovery.languages) { %>
+            <li><a lang="<%- language.tag %>" hreflang="<%- language.tag %>" href="<%- BASE_URL + language.path %>"><%- language.label %></a></li>
+            <% } %>
+          </ul>
+        </nav>
       </main>
     </div>
     <!-- built files will be auto injected -->

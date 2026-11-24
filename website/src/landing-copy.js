@@ -1,11 +1,11 @@
-import traditionalChinese from "./locales/zh-Hant";
-import french from "./locales/fr-FR";
-import german from "./locales/de-DE";
-import italian from "./locales/it";
-import japanese from "./locales/ja";
-import korean from "./locales/ko";
-import russian from "./locales/ru";
-import mexicanSpanish from "./locales/es-MX";
+import traditionalChinese from "./locales/zh-Hant.js";
+import french from "./locales/fr-FR.js";
+import german from "./locales/de-DE.js";
+import italian from "./locales/it.js";
+import japanese from "./locales/ja.js";
+import korean from "./locales/ko.js";
+import russian from "./locales/ru.js";
+import mexicanSpanish from "./locales/es-MX.js";
 
 export const storeURL = "https://apps.apple.com/app/pixelsmeasure/id1638740542";
 export const imageBase = process.env.BASE_URL + "img/v5/";

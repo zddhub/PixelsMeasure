@@ -19,7 +19,7 @@
 
 <script>
 import { copyFor, imageBase } from "../landing-copy";
-import { saveLocale, siteLocales } from "../site-locales";
+import { localePath, siteLocales } from "../site-locales";
 
 export default {
   data: () => ({ imageBase, siteLocales, sections: ["workflow", "tools", "download"] }),
@@ -32,8 +32,8 @@ export default {
         return this.$i18n.locale;
       },
       set(locale) {
-        this.$i18n.locale = locale;
-        saveLocale(locale);
+        if (locale === this.$i18n.locale) return;
+        window.location.assign(process.env.BASE_URL + localePath(locale) + window.location.search + window.location.hash);
       }
     }
   }

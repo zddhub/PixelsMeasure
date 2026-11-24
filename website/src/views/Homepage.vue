@@ -43,7 +43,7 @@
     <section id="spacing" class="pm-spacing" aria-labelledby="pm-spacing-title">
       <div class="pm-wrap pm-section pm-spacing-inner">
         <div class="pm-spacing-copy">
-          <p class="pm-release">PixelsMeasure 5.1</p>
+          <p class="pm-release">PixelsMeasure 5.1+</p>
           <h2 id="pm-spacing-title">{{ creative.spacingTitle }}</h2>
           <dl class="pm-spacing-platforms">
             <div>
