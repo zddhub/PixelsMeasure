@@ -261,6 +261,12 @@
   box-shadow: inset 0 1px #9dc9f03d, 0 20px 55px #01091275;
 }
 
+/* Keep the panel's HTML text and controls over the SVG probe. */
+.pm-probe-heading, .pm-probe-footer {
+  position: relative;
+  z-index: 2;
+}
+
 .pm-probe-heading {
   display: flex;
   flex-wrap: wrap;

@@ -4,12 +4,10 @@
     :viewBox="artworkViewBox"
     role="img" :aria-label="label">
     <g v-if="mode === 'spacing'">
-      <g v-for="swatch in swatches" :key="swatch.name" ref="swatchCards"
+      <g v-for="swatch in swatches" :key="swatch.name"
         :transform="'translate(' + swatch.x + ' ' + swatch.y + ')'">
         <rect x="-6" y="-6" width="174" height="150" rx="16" fill="#fff" stroke="#e5e9f2"/>
         <rect :width="swatch.width" :height="swatch.height" :rx="swatch.radius" :fill="swatch.color"/>
-        <text x="3" :y="swatchNameBaseline" :style="{ fontSize: swatchNameSize + 'px' }" class="pm-canvas-name">{{ swatch.name }}</text>
-        <text x="3" :y="swatchHexBaseline" :style="{ fontSize: swatchHexSize + 'px' }" class="pm-canvas-meta">{{ swatch.color }}</text>
       </g>
       <g v-if="!probePoint">
         <path class="pm-red-line" :d="gapMarker.path" fill="none"/>
@@ -20,11 +18,17 @@
       </g>
       <g v-if="liveReading" class="pm-active-probe" aria-hidden="true">
         <path class="pm-red-line" :d="liveReading.lines" fill="none"/>
-        <g class="pm-red-tag" :transform="liveReading.labelTransform">
+        <g v-if="liveReading.label" class="pm-red-tag" :transform="liveReading.labelTransform">
           <rect :width="liveReading.labelWidth" height="20" rx="10"/>
           <text :x="liveReading.labelWidth / 2" y="10">{{ liveReading.label }}</text>
         </g>
         <image :href="cursorImage" :x="probePoint.x - 11" :y="probePoint.y - 11" width="24" height="24"/>
+      </g>
+      <!-- Keep the displayed lettering above any probe strokes. -->
+      <g v-for="swatch in swatches" :key="swatch.name + '-label'" ref="swatchLabels"
+        :transform="'translate(' + swatch.x + ' ' + swatch.y + ')'">
+        <text x="3" :y="swatchNameBaseline" :style="{ fontSize: swatchNameSize + 'px' }" class="pm-canvas-name">{{ swatch.name }}</text>
+        <text x="3" :y="swatchHexBaseline" :style="{ fontSize: swatchHexSize + 'px' }" class="pm-canvas-meta">{{ swatch.color }}</text>
       </g>
     </g>
 
@@ -137,7 +141,8 @@
 </template>
 
 <script>
-import { formatLabel, probeAt, roundedBoundsAt } from "../measurement-probe";
+import { probeAt, roundedBoundsAt, visibleProbe } from "../measurement-probe";
+import { buildTextMask } from "../probe-text-mask";
 import paperPlaneImage from "../assets/creative-paper-plane.jpg";
 import namtsoCoverImage from "../assets/namtso-cover.jpg";
 
@@ -195,7 +200,9 @@ export default {
     labelScale: 1,
     spacingBounds: canvas,
     panelBounds: canvas,
-    chromeBounds: [],
+    labelObstacles: [],
+    textMask: null,
+    footerDivider: null,
     swatchTextBounds: [],
     cursorImage: process.env.BASE_URL + "img/v5/probe-crosshair.png",
     swatches,
@@ -229,7 +236,7 @@ export default {
       return this.swatchHexSize > 12 ? 141 : 136;
     },
     swatchLabelBand() {
-      const labels = this.swatchTextBounds.flat();
+      const labels = this.swatchTextBounds;
       return {
         top: Math.min(140, ...labels.map(bounds => bounds.y)),
         bottom: Math.max(170, ...labels.map(bounds => bounds.y + bounds.height))
@@ -268,28 +275,17 @@ export default {
       const cardIndex = cards.findIndex(card => roundedBoundsAt(point, card));
       let edges;
       if (cardIndex < 0) {
-        const chrome = this.chromeBounds.find(bounds => roundedBoundsAt(point, bounds));
-        edges = chrome ? roundedBoundsAt(point, chrome)
-          : probeAt(point, [...cards, ...this.chromeBounds], this.panelBounds);
+        edges = probeAt(point, this.footerDivider ? [...cards, this.footerDivider] : cards, this.panelBounds);
       } else {
         const swatch = swatches[cardIndex];
-        const card = roundedBoundsAt(point, cards[cardIndex]);
-        const whiteArea = { x: card.left, y: card.top, width: card.right - card.left, height: card.bottom - card.top };
-        const textBounds = this.swatchTextBounds[cardIndex] || [];
-        const text = textBounds.find(bounds => roundedBoundsAt(point, bounds));
-        edges = roundedBoundsAt(point, swatch) || (text
-          ? roundedBoundsAt(point, text)
-          : probeAt(point, [swatch, ...textBounds], whiteArea));
+        edges = roundedBoundsAt(point, swatch) || probeAt(point, [swatch], cards[cardIndex]);
       }
       if (!edges) return null;
 
-      const { left, right, top, bottom } = edges;
-      const horizontal = axis !== "vertical"
-        ? `M${left} ${y}H${right}M${left} ${y - 8}v16M${right} ${y - 8}v16` : "";
-      const vertical = axis !== "horizontal"
-        ? `M${x} ${top}V${bottom}M${x - 8} ${top}h16M${x - 8} ${bottom}h16` : "";
+      const { lines, label } = visibleProbe(point, edges, axis, this.textMask);
+      if (!label) return { lines };
 
-      const label = formatLabel(edges, axis);
+      const { left, right } = edges;
       const labelWidth = label.length * 7 + 14;
       const width = labelWidth * this.labelScale;
       const height = 20 * this.labelScale;
@@ -305,16 +301,16 @@ export default {
       const maxY = this.spacingBounds.y + this.spacingBounds.height - minMargin;
       const fits = origin => origin >= minY && origin + height <= maxY;
       const leftEdge = clamp(labelX, minMargin, canvas.width - width - minMargin);
-      const clearsChrome = origin => this.chromeBounds.every(bounds =>
+      const clearsLabels = origin => this.labelObstacles.every(bounds =>
         leftEdge + width <= bounds.x || leftEdge >= bounds.x + bounds.width
         || origin + height <= bounds.y || origin >= bounds.y + bounds.height
       );
       const preferred = inGap ? [above, below] : [below, above];
-      const labelY = preferred.find(origin => fits(origin) && clearsNames(origin) && clearsChrome(origin));
+      const labelY = preferred.find(origin => fits(origin) && clearsNames(origin) && clearsLabels(origin));
       const topEdge = labelY === undefined ? labelsTop - height : labelY;
 
       return {
-        lines: horizontal + vertical,
+        lines,
         labelTransform: `translate(${leftEdge} ${topEdge}) scale(${this.labelScale})`,
         labelWidth,
         label
@@ -326,7 +322,7 @@ export default {
       if (this.spacingPanel) this.$nextTick(this.updateSpacingLayout);
     },
     paused() {
-      if (this.spacingPanel) this.$nextTick(this.updateChromeBounds);
+      if (this.spacingPanel) this.$nextTick(this.updateLabelObstacles);
     },
     autoplaySpacing(playing) {
       cancelAnimationFrame(this.spacingFrame);
@@ -344,19 +340,12 @@ export default {
   },
   methods: {
     updateTextBounds() {
-      this.swatchTextBounds = this.$refs.swatchCards.map((card, index) => {
-        const swatch = this.swatches[index];
-        return Array.from(card.querySelectorAll("text"), text => {
-          const bounds = text.getBBox();
-          return {
-            x: swatch.x + bounds.x,
-            y: swatch.y + bounds.y,
-            width: bounds.width,
-            height: bounds.height,
-            radius: 0
-          };
-        });
-      });
+      this.swatchTextBounds = this.$refs.swatchLabels.flatMap((label, index) =>
+        Array.from(label.querySelectorAll("text"), text => {
+          const { y, height } = text.getBBox();
+          return { y: this.swatches[index].y + y, height };
+        })
+      );
     },
     updateSpacingLayout() {
       const { left, top, width, height } = this.$el.getBoundingClientRect();
@@ -380,10 +369,10 @@ export default {
       this.$nextTick(() => {
         if (!this.$el.isConnected) return;
         this.updateTextBounds();
-        this.updateChromeBounds();
+        this.updateLabelObstacles();
       });
     },
-    updateChromeBounds() {
+    updateLabelObstacles() {
       if (!this.$el.isConnected) return;
       const matrix = this.$el.getScreenCTM();
       if (!matrix) return;
@@ -400,9 +389,12 @@ export default {
         }).filter(rect => rect.width > 0 && rect.height > 0);
       });
       const dividerHeight = parseFloat(getComputedStyle(this.spacingPanel.querySelector(".pm-probe-footer")).borderTopWidth);
-      this.chromeBounds = dividerHeight > 0
-        ? [...textAndControls, { x: 0, y: canvas.height, width: canvas.width, height: dividerHeight * this.labelScale, radius: 0 }]
-        : textAndControls;
+      this.footerDivider = dividerHeight > 0
+        ? { x: 0, y: canvas.height, width: canvas.width, height: dividerHeight * this.labelScale }
+        : null;
+      this.labelObstacles = this.footerDivider ? [...textAndControls, this.footerDivider] : textAndControls;
+      const svgLabels = this.$refs.swatchLabels.map((group, index) => ({ ...this.swatches[index], group }));
+      this.textMask = buildTextMask(svgLabels, nodes, this.spacingBounds, inverse, this.labelScale);
     },
     clearProbe() {
       this.pointer = null;
