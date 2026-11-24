@@ -30,11 +30,14 @@
 
     <g v-else-if="mode === 'object'">
       <rect x="183" y="17" width="274" height="206" rx="18" fill="#ecf3ff" stroke="#dee8f9"/>
-      <!-- The original smart-object storyboard uses a 156 × 110 paper plane. -->
-      <g transform="translate(242 58)">
-        <path d="M0 53 156 0 117 110 84 81 61 100 47 70Z" fill="#5284df"/>
-        <path d="M47 70 137 15 84 81 61 100Z" fill="#3565ba"/>
-      </g>
+      <defs>
+        <!-- The Creative paper-plane silhouette, normalized to the cropped photo. -->
+        <clipPath id="pm-paper-plane-outline" clipPathUnits="objectBoundingBox">
+          <polygon points="0,.1991 1,0 .3988,1 .2321,.7367 .0779,.7854 .1355,.5022"/>
+        </clipPath>
+      </defs>
+      <image :href="paperPlaneImage" x="242" y="58" width="156" height="110"
+        preserveAspectRatio="none" clip-path="url(#pm-paper-plane-outline)"/>
       <rect class="pm-object-draft" x="218" y="38" width="204" height="152"
         fill="#ff3b3010" stroke="var(--pm-probe-color)" stroke-dasharray="5 4"/>
       <g class="pm-object-result">
@@ -50,11 +53,15 @@
 
     <g v-else-if="mode === 'guides'">
       <rect x="169" y="15" width="302" height="200" rx="17" fill="#fff" stroke="#d4e5df"/>
+      <defs>
+        <linearGradient id="pm-cover-shade" x1="0%" x2="0%" y1="0%" y2="100%">
+          <stop offset="42%" stop-color="#071a28" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#071a28" stop-opacity=".9"/>
+        </linearGradient>
+      </defs>
       <g transform="translate(212 30)">
-        <rect width="216" height="124" rx="5" fill="#e2eee6"/>
-        <circle cx="162" cy="30" r="21" fill="#fff4cf"/>
-        <path d="M0 97 77 54l46 27 93-43v86H0Z" fill="#a8c8b6"/>
-        <path d="M0 99 65 78l65 46H0Z" fill="#74a28e"/>
+        <image :href="namtsoCoverImage" width="216" height="124" preserveAspectRatio="xMidYMid slice"/>
+        <rect width="216" height="124" fill="url(#pm-cover-shade)"/>
         <text x="14" y="107" class="pm-cover-title">Along the coast</text>
         <rect y="135" width="213" height="35" rx="5" fill="#f1f7f3" stroke="#d4e5df"/>
         <text x="10" y="157" class="pm-canvas-meta">The weekend itinerary</text>
@@ -131,6 +138,8 @@
 
 <script>
 import { formatLabel, probeAt, roundedBoundsAt } from "../measurement-probe";
+import paperPlaneImage from "../assets/creative-paper-plane.jpg";
+import namtsoCoverImage from "../assets/namtso-cover.jpg";
 
 const canvas = { x: 0, y: 0, width: 640, height: 250 };
 const swatches = [
@@ -191,6 +200,8 @@ export default {
     cursorImage: process.env.BASE_URL + "img/v5/probe-crosshair.png",
     swatches,
     gapMarker,
+    paperPlaneImage,
+    namtsoCoverImage,
     paymentOptions: [
       { name: "Card", position: "translate(193 64)" },
       { name: "PayPal", position: "translate(328 64)" },

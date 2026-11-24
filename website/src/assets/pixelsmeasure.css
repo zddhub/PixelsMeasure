@@ -331,7 +331,7 @@
 
 .pm-canvas-name { fill: var(--pm-ink); font-size: 15px; font-weight: 750; }
 .pm-canvas-meta { fill: var(--pm-muted); font-size: 12px; }
-.pm-cover-title { fill: #153f2f; font: 600 22px Georgia, serif; }
+.pm-cover-title { fill: #fff; font: 600 22px Georgia, serif; }
 .pm-red-line, .pm-blue-line { stroke-width: 2; stroke-linecap: round; }
 .pm-red-line { stroke: var(--pm-probe-color); }
 .pm-probe .pm-red-line { stroke-linecap: butt; vector-effect: non-scaling-stroke; }
