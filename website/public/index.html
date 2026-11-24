@@ -62,7 +62,7 @@
         <p><%- discovery.copy.hero.join(" ") %></p>
         <p><%- discovery.summary %></p>
         <p><a href="<%- discovery.storeURL %>"><%- discovery.copy.store %></a>. <%- discovery.download %></p>
-        <h2><%- discovery.copy.tools %></h2>
+        <h2 id="tools"><%- discovery.copy.tools %></h2>
         <ul>
           <% for (const feature of discovery.features) { %>
           <li><%- feature %></li>
@@ -71,13 +71,13 @@
         <h2><%- discovery.copy.live.title %></h2>
         <p><%- discovery.copy.live.body %></p>
         <p><%- discovery.copy.live.permission %></p>
-        <h2><%- discovery.copy.workflow %></h2>
+        <h2 id="workflow"><%- discovery.copy.workflow %></h2>
         <ol>
           <% for (const step of discovery.copy.workflowSteps) { %>
           <li><strong><%- step.title %></strong> <%- step.body %></li>
           <% } %>
         </ol>
-        <h2><%- discovery.copy.download %></h2>
+        <h2 id="download"><%- discovery.copy.download %></h2>
         <p><%- discovery.copy.requirements %></p>
         <p><a href="<%- BASE_URL + discovery.guidePath %>" hreflang="en-US"><%- discovery.copy.guide %></a></p>
         <nav aria-label="<%- discovery.copy.language %>">

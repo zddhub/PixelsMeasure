@@ -17,7 +17,7 @@
 */
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import { followLegacyLink, scrollToSection } from "./legacy-links";
 import Argon from "./plugins/argon-kit";
 import VueI18n from 'vue-i18n'
 import './registerServiceWorker'
@@ -27,15 +27,16 @@ Vue.config.productionTip = false;
 Vue.use(Argon);
 Vue.use(VueI18n);
 
-const i18n = new VueI18n({
-  locale: initialLocale(),
-  fallbackLocale: 'en-US',
-  sync: true,
-  globalInjection: true,
-});
+if (!followLegacyLink()) {
+  window.addEventListener("hashchange", followLegacyLink);
 
-new Vue({
-  i18n,
-  router,
-  render: h => h(App)
-}).$mount("#app");
+  const i18n = new VueI18n({ locale: initialLocale() });
+  new Vue({
+    i18n,
+    render: h => h(App),
+    mounted() {
+      // The Vue mount replaces the static anchor targets in the initial HTML.
+      this.$nextTick(scrollToSection);
+    }
+  }).$mount("#app");
+}

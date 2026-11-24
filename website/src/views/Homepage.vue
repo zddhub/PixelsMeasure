@@ -18,7 +18,7 @@
               {{ copy.watchPreview }}
             </button>
           </div>
-          <p class="pm-free-note">{{ copy.freeNote }} · <router-link :to="{ path: '/', hash: '#download' }">{{ copy.proLink }}</router-link></p>
+          <p class="pm-free-note">{{ copy.freeNote }} · <a href="#download">{{ copy.proLink }}</a></p>
         </div>
         <div class="pm-probe">
           <div class="pm-probe-heading">

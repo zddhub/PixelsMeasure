@@ -34,4 +34,4 @@ We will post updates to these terms on this page and revise the date above.
 
 ## Privacy and contact
 
-See the [PixelsMeasure Privacy Policy](https://pixelsmeasure.com/#/privacy) for how the app handles information. If you have questions about these terms, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).
+See the [PixelsMeasure Privacy Policy](https://pixelsmeasure.com/privacy/) for how the app handles information. If you have questions about these terms, email [pixelsmeasure@gmail.com](mailto:pixelsmeasure@gmail.com).
